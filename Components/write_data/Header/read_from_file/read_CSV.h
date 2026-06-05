@@ -50,11 +50,11 @@ Employee * read_CSV(string file_name){
         getline(ss, ar->full_hour,',');
         getline(ss, ar->work_hour,',');
         
-        
-        display_all_data(e);
+        e->tail = ar;
     }
-    
     file.close();
+    
+    display_all_data(e);
 
     return e;
 }
