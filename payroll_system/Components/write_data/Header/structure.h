@@ -13,7 +13,6 @@ struct Attendance_record{
 
     Attendance_record * next;
     Attendance_record * prev;
-
 };
 
 struct Employee{
