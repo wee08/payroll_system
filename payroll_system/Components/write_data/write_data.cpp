@@ -1,6 +1,5 @@
 #include "./Header/read_from_file/read_CSV.h"
 #include "./Header/structure.h"
-#include "../utils/calculate_attendance.h"
 
 #include "./Header/write_to_file/attendance_record.h"
 int main(){

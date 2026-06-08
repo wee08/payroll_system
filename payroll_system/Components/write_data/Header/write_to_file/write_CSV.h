@@ -13,7 +13,6 @@ using namespace std;
 void write_CSV(Employee * e,string file_name, int attendance_count,string ID){
 
     Attendance_record * ar = e->head;
-    // ofstream file(file_name,ios::app);
     
     ofstream file;
     string temp_file = "../../Data/temp.csv";
@@ -35,7 +34,6 @@ void write_CSV(Employee * e,string file_name, int attendance_count,string ID){
             << ar->overtime << ","
             << ar->attendance_count << ","
             << ar->total_cost << "," << endl;
-
 
     file.close();
 }
