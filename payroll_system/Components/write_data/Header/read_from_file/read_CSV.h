@@ -45,10 +45,10 @@ Employee * read_CSV(string file_name){
         getline(ss,ar->ID,',');
         getline(ss,ar->name,',');
         getline(ss,ar->gender,',');
+        getline(ss, ar->work_hour,',');
         getline(ss,ar->overtime,',');
         getline(ss,ar->attendance_count,',');
-        getline(ss, ar->full_hour,',');
-        getline(ss, ar->work_hour,',');
+        getline(ss,ar->total_cost, ',');
         
         e->tail = ar;
     }

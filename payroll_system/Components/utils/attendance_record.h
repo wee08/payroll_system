@@ -1,4 +1,0 @@
-#ifndef ATTENDANCE_RECORD_H
-#define ATTENDANCE_RECORD_H
-
-#endif
