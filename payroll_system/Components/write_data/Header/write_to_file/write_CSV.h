@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void write_CSV(Employee * e,string file_name, int attendance_count,string ID){
+void write_CSV(Employee * e,string file_name,string ID, int overtime,int attendance_count,int work_hour,int total_cost){
 
     Attendance_record * ar = e->head;
     
@@ -24,15 +24,20 @@ void write_CSV(Employee * e,string file_name, int attendance_count,string ID){
     file.open(temp_file, ios::app);
 
     if(isEmpty){
-        file << "ID,Name,Gender,Work Hour,Overtime,Attendance,Total Cost" << endl;
+        file << "ID,Name,Gender,Overtime,Attendance,Work Hour,Total Cost" << endl;
     }
+    ar->overtime = to_string(overtime);
+    ar->attendance_count = to_string(attendance_count);
+    ar->work_hour = to_string(work_hour);
+    ar->total_cost = to_string(total_cost);
+
 
         file<< ar->ID << ","
             << ar->name << ","
             << ar->gender << ","
-            << ar->work_hour << ","
             << ar->overtime << ","
             << ar->attendance_count << ","
+            << ar->work_hour << ","
             << ar->total_cost << "," << endl;
 
     file.close();

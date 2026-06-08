@@ -1,9 +1,3 @@
-ID,Name,Gender,Work Hour,Overtime,Attendance,Total Cost
-F1,Sean Manutnithya,M,2,1,120,112,
-F1,Sean Manutnithya,M,2,1,120,112,
-F1,Sean Manutnithya,M,2,1,120,112,
-F1,Sean Manutnithya,M,2,1,120,112,
-F1,Sean Manutnithya,M,2,1,120,112,
-F1,Sean Manutnithya,M,2,1,120,112,
-F1,Sean Manutnithya,M,2,1,120,112,
-F1,Sean Manutnithya,M,2,1,120,112,
+ID,Name,Gender,Overtime,Attendance,Work Hour,Total Cost
+F1,Sean Manutnithya,M,1,112,2,999,
+F1,Sean Manutnithya,M,11,2,120,9999,

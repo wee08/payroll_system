@@ -13,5 +13,5 @@ int main(){
     Employee * e = read_CSV(file_path);
     // calculate_attendance(e,file_path);
 
-    attendance_record(e,file_path,10,"F1");
+    attendance_record(e,file_path,"F1",11,2,120,9999);
 }

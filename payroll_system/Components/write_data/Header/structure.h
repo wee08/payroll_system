@@ -6,10 +6,9 @@ struct Attendance_record{
     string ID;
     string name;
     string gender;
-    string work_hour;
     string overtime;
     string attendance_count;
-    string full_hour;
+    string work_hour;
     string total_cost;
 
     Attendance_record * next;

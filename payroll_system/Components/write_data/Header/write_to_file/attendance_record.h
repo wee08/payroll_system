@@ -7,8 +7,7 @@
 #include "./write_CSV.h"
 using namespace std;
 
-void attendance_record(Employee*e, string file_name, int attendance_count,string ID){
-        
+void attendance_record(Employee *e, string file_name,string ID, int overtime,int attendance_count,int work_hour,int total_cost){
     Attendance_record * ar = e->head;
 
     while(ar!=nullptr){
@@ -21,9 +20,6 @@ void attendance_record(Employee*e, string file_name, int attendance_count,string
         return;
     }
 
-    ar->attendance_count = to_string(attendance_count);
-    ar->total_cost = to_string(333);
-
-    write_CSV(e,file_name,attendance_count,ID);
+    write_CSV(e,file_name,ID,overtime,attendance_count,work_hour,total_cost);
 }
 #endif
