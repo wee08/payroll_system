@@ -8,7 +8,7 @@
 #include "../../../utils/calculate_utils.h"
 using namespace std;
 
-void attendance_record(Employee *e, string file_name,string ID,int attendance_count,int work_hour){
+void attendance_record(Employee *e,string file_name,string ID,int attendance_count,int work_hour){
     Attendance_record * ar = e->head;
 
     while(ar!=nullptr){
@@ -21,7 +21,7 @@ void attendance_record(Employee *e, string file_name,string ID,int attendance_co
         return;
     }
 
-    calculate_utils(e,ID,attendance_count,work_hour);
+    calculate_utils(e,file_name,ID,attendance_count,work_hour);
 
 }
 #endif

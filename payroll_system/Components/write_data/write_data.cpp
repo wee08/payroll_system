@@ -2,15 +2,15 @@
 #include "./Header/structure.h"
 #include "./Header/write_to_file/attendance_record.h"
 int main(){
-    string file_path = "../../Data/attendance.csv";
+    string file_name = "../../Data/fulltime_employee_list.csv";
     string temp_file = "../Data/temp.csv";
-    // write_CSV(file_path);
+    // write_CSV(file_name);
     // write_CSV("../../Data/attendance.csv");
     // Employee * e = read_CSV("../../Data/attendance.csv");
-    // display_all_data(e);
     // struct employee = read_CSV function to be able to get the data from linked list
-    Employee * e = read_CSV(file_path);
-    // calculate_attendance(e,file_path);
+    Employee * e = read_CSV(file_name);
+    display_all_data(e);
+    // calculate_attendance(e,file_name);
 
-    attendance_record(e,file_path,"F1",2,172);
+    attendance_record(e,file_name,"F1",2,172);
 }

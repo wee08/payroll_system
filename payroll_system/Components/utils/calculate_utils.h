@@ -8,9 +8,7 @@
 using namespace std;
 
 
-void calculate_utils(Employee * e,string ID,int attendance_cout,int work_hour){
-
-    string file_path = "../../Data/attendance.csv";
+void calculate_utils(Employee * e,string file_name,string ID,int attendance_cout,int work_hour){
 
     const int full_hour = 160;
 
@@ -19,7 +17,7 @@ void calculate_utils(Employee * e,string ID,int attendance_cout,int work_hour){
 
     int total_cost  = attendance_cout * 8;
 
-    write_CSV(e,file_path,ID,overtime,attendance_cout,work_hour,total_cost);
+    write_CSV(e,file_name,ID,overtime,attendance_cout,work_hour,total_cost);
 
 
 }
