@@ -1,6 +1,5 @@
 #include "./Header/read_from_file/read_CSV.h"
 #include "./Header/structure.h"
-
 #include "./Header/write_to_file/attendance_record.h"
 int main(){
     string file_path = "../../Data/attendance.csv";
@@ -13,5 +12,5 @@ int main(){
     Employee * e = read_CSV(file_path);
     // calculate_attendance(e,file_path);
 
-    attendance_record(e,file_path,"F1",11,2,120,9999);
+    attendance_record(e,file_path,"F1",2,172);
 }

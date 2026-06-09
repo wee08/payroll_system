@@ -26,6 +26,7 @@ void write_CSV(Employee * e,string file_name,string ID, int overtime,int attenda
     if(isEmpty){
         file << "ID,Name,Gender,Overtime,Attendance,Work Hour,Total Cost" << endl;
     }
+    
     ar->overtime = to_string(overtime);
     ar->attendance_count = to_string(attendance_count);
     ar->work_hour = to_string(work_hour);

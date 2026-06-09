@@ -1,11 +1,11 @@
-ID,Name,Gender,Department,Position,Monthly Salary,Phone
-F1,Sean Manutnithya,M,IT,Software Engineer,3200,963111156
-F2,Tang Chandara,M,MKT,Graphic Designer,1200,123344896
-F3,Tang Sovanoudom,M,HR,HR Manager,5000,122223333
-F4,Thorn Bunthet,M,IT,Cloud Engineer,3500,966663000
-F5,Kev Veasna,F,IT,Data Analyse,2800,961223324
-F6,Prum Somnang,F,HR,Senior Executive Leadership,2000,968656999
-F7,Pech Janmony,F,MKT,MKT Manager,4250,961050090
-F8,Lai Heng,M,BD,Business Development Manager,5000,123339999
-F9,Ichigo Kurosaki,M,BD,Partnership Manager,4200,968888300
-F10,Camado Tanjiro,F,F&L,Accounting,670,960400500
+ID,Name,Gender,Department,Position,Monthly Salary,Hourly Paid,Phone
+F1,Sean Manutnithya,M,IT,Software Engineer,3200,20,963111156
+F2,Tang Chandara,M,MKT,Graphic Designer,1200,7.5,123344896
+F3,Tang Sovanoudom,M,HR,HR Manager,5000,31.25,122223333
+F4,Thorn Bunthet,M,IT,Cloud Engineer,3500,21.875,966663000
+F5,Kev Veasna,F,IT,Data Analyse,2800,17.5,961223324
+F6,Prum Somnang,F,HR,Senior Executive Leadership,2000,12.5,968656999
+F7,Pech Janmony,F,MKT,MKT Manager,4250,26.5625,961050090
+F8,Lai Heng,M,BD,Business Development Manager,5000,31.25,123339999
+F9,Ichigo Kurosaki,M,BD,Partnership Manager,4200,26.25,968888300
+F10,Camado Tanjiro,F,F&L,Accounting,670,4.1875,960400500
