@@ -6,6 +6,12 @@ struct Attendance_record{
     string ID;
     string name;
     string gender;
+    string department;
+    string position;
+    string salary;
+    string hourly_paid;
+    string phone;
+    
     string overtime;
     string attendance_count;
     string work_hour;

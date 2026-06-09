@@ -45,6 +45,12 @@ Employee * read_CSV(string file_name){
         getline(ss,ar->ID,',');
         getline(ss,ar->name,',');
         getline(ss,ar->gender,',');
+        getline(ss,ar->department,',');
+        getline(ss,ar->position,',');
+        getline(ss,ar->salary,',');
+        getline(ss,ar->hourly_paid,',');
+        getline(ss,ar->phone,',');
+
         getline(ss, ar->work_hour,',');
         getline(ss,ar->overtime,',');
         getline(ss,ar->attendance_count,',');
