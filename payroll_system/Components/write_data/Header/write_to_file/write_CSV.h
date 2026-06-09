@@ -15,7 +15,7 @@ void write_CSV(Employee * e,string file_name,string ID, int overtime,int attenda
     Attendance_record * ar = e->head;
     
     ofstream file;
-    string temp_file = "../../Data/temp.csv";
+    string temp_file = "../../Data/attendance.csv";
 
     ifstream check(temp_file);
     bool isEmpty = (check.peek()) == EOF;
