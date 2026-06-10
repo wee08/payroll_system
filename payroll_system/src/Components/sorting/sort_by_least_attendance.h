@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void sortBubble(Employee* e, int size) {
+void sort_by_least_attendance(Employee* e, int size) {
 
     if(e->head == nullptr || e->head->next == nullptr)return;
 
@@ -24,7 +24,6 @@ void sortBubble(Employee* e, int size) {
 
         for(int j = 0; j < size - i - 1; j++) {
             if(stoi(ar_1->attendance_count) > stoi(ar_2->attendance_count)) {
-                // Swap all fields between the two records
                 swap(ar_1->ID, ar_2->ID);
                 swap(ar_1->name, ar_2->name);
                 swap(ar_1->gender, ar_2->gender);

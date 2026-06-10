@@ -3,7 +3,8 @@
 #include "./payroll_system/src/Model/structure.h"
 #include "./payroll_system/src/Components/track_time_attendance/attendance_record.h"
 #include "./payroll_system/src/Components/track_time_attendance/display_all_data.h"
-#include "./payroll_system/src/Components/searching/sort_by_least_attendance.h"
+#include "./payroll_system/src/Components/sorting/sort_by_least_attendance.h"
+#include "./payroll_system/src/Components/sorting/sort_by_most_attendance.h"
 
 int main(){
     string employee_file = "./payroll_system/Data/employee_list.csv";
@@ -15,6 +16,6 @@ int main(){
     Employee * e = read_CSV(attendance_file);
     
     // attendance_record(e,attendance_file,"F1",2,172);
-    sortBubble(e,e->size);
+    sort_by_most_attendance(e,e->size);
     display_all_data(e,attendance_file);
 }
