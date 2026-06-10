@@ -3,6 +3,7 @@
 #include <iostream>
 using namespace std;
 struct Attendance_record{
+
     string ID;
     string name;
     string gender;

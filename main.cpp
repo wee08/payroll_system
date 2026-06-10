@@ -1,0 +1,20 @@
+#include "./payroll_system/src/Components/IO/write_CSV.h"
+#include "./payroll_system/src/Components/IO/write_CSV.h"
+#include "./payroll_system/src/Model/structure.h"
+#include "./payroll_system/src/Components/track_time_attendance/attendance_record.h"
+#include "./payroll_system/src/Components/track_time_attendance/display_all_data.h"
+#include "./payroll_system/src/Components/searching/sort_by_least_attendance.h"
+
+int main(){
+    string employee_file = "./payroll_system/Data/employee_list.csv";
+    string attendance_file = "./payroll_system/Data/attendance.csv";
+    // write_CSV(employee_file);
+    // write_CSV("../../Data/attendance.csv");
+    // Employee * e = read_CSV("../../Data/attendance.csv");
+    // struct employee = read_CSV function to be able to get the data from linked listñ
+    Employee * e = read_CSV(attendance_file);
+    
+    // attendance_record(e,employee_file,"F1",2,172);
+    // sortBubble(e,20);
+    display_all_data(e,attendance_file);
+}
