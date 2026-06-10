@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-#include "../track_time_attendance/write_data/Header/structure.h"
-#include "../track_time_attendance/write_data/Header/write_to_file/write_CSV.h"
+#include "../Model/structure.h"
+#include "../Components/IO/write_CSV.h"
 using namespace std;
 
 

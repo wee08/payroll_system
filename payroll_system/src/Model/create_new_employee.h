@@ -3,7 +3,7 @@
 
 #include <iostream>
 // Internal
-#include "../structure.h"
+#include "./structure.h"
 
 using namespace std;
 

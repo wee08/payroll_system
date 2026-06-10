@@ -4,7 +4,7 @@
 #include <iostream>
 #include <iomanip>
 
-#include "../structure.h"
+#include "../../Model/structure.h"
 
 void display_all_data(Employee * e){
 
@@ -14,6 +14,7 @@ void display_all_data(Employee * e){
     const int L_space = 30;
 
     Attendance_record * ar = e->head;
+    
     cout<< left << setw(default_space) << "ID"
         << setw(M_space) << "Name"
         << setw(default_space) << "Gender"

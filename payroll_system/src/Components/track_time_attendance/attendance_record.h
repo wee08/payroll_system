@@ -2,10 +2,10 @@
 #define ATTENDANCE_RECORD_H
 #include <ostream>
 
-#include "../structure.h"
-#include "../read_from_file/read_CSV.h"
-#include "./write_CSV.h"
-#include "../../../../utils/calculate_utils.h"
+#include "../../Model/structure.h"
+#include "../IO/read_CSV.h"
+#include "../IO/write_CSV.h"
+#include "../../utils/calculate_utils.h"
 using namespace std;
 
 void attendance_record(Employee *e,string file_name,string ID,int attendance_count,int work_hour){

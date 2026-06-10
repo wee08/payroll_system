@@ -1,6 +1,7 @@
-#include "./Header/read_from_file/read_CSV.h"
-#include "./Header/structure.h"
-#include "./Header/write_to_file/attendance_record.h"
+#include "../IO/write_CSV.h"
+#include "../../Model/structure.h"
+#include "../track_time_attendance/attendance_record.h"
+#include "../track_time_attendance/display_all_data.h"
 int main(){
     string file_name = "../../../Data/employee_list.csv";
     string temp_file = "../../../Data/attendance.csv";

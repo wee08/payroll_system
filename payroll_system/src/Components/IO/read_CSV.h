@@ -6,9 +6,8 @@
 #include <fstream>
 #include <sstream>
 
-#include "../structure.h"
-#include "display_all_data.h"
-#include "create_new_employee.h"
+#include "../../Model/structure.h"
+#include "../../Model/create_new_employee.h"
 
 using namespace std;
 

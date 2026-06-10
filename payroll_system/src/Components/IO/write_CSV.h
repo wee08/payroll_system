@@ -6,7 +6,7 @@
 #include <string>
 #include <sstream>
 
-#include "../structure.h"
+#include "../../Model/structure.h"
 
 using namespace std;
 
