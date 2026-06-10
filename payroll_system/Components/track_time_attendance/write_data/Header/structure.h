@@ -15,6 +15,7 @@ struct Attendance_record{
     string overtime;
     string attendance_count;
     string work_hour;
+    string overtime_paid;
     string total_cost;
 
     Attendance_record * next;

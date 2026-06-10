@@ -1,2 +1,2 @@
-ID,Name,Gender,Overtime,Attendance,Work Hour,Total Cost
-F1,Sean Manutnithya,M,12,2,172,16,
+ID,Name,Gender,Departmen,Position,Monthly Salary,Hourly Paid,Phone,Overtime,Attendance,Work Hour,Overtime Paid,Total Cost
+F1,Sean Manutnithya,M,IT,Software Engineer,3200,20,963111156,12,2,172,360.000000,16,

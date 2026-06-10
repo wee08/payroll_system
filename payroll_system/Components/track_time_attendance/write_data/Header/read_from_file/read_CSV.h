@@ -51,10 +51,11 @@ Employee * read_CSV(string file_name){
         getline(ss,ar->hourly_paid,',');
         getline(ss,ar->phone,',');
 
-        getline(ss, ar->work_hour,',');
+        getline(ss,ar->work_hour,',');
         getline(ss,ar->overtime,',');
         getline(ss,ar->attendance_count,',');
-        getline(ss,ar->total_cost, ',');
+        getline(ss,ar->total_cost,',');
+
         
         e->tail = ar;
     }

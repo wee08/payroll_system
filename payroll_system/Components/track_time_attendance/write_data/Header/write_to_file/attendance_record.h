@@ -5,14 +5,19 @@
 #include "../structure.h"
 #include "../read_from_file/read_CSV.h"
 #include "./write_CSV.h"
-#include "../../../utils/calculate_utils.h"
+#include "../../../../utils/calculate_utils.h"
 using namespace std;
 
 void attendance_record(Employee *e,string file_name,string ID,int attendance_count,int work_hour){
     Attendance_record * ar = e->head;
 
+    float hourly_paid;
+
     while(ar!=nullptr){
         if(ar->ID != ID)break;
+
+        hourly_paid = stoi(ar->hourly_paid);
+        
         ar = ar->next;
     }
 
@@ -21,7 +26,7 @@ void attendance_record(Employee *e,string file_name,string ID,int attendance_cou
         return;
     }
 
-    calculate_utils(e,file_name,ID,attendance_count,work_hour);
+    calculate_utils(e,file_name,ID,attendance_count,work_hour,hourly_paid);
 
 }
 #endif

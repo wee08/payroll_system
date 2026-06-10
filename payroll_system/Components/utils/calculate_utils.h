@@ -3,22 +3,23 @@
 
 #include <iostream>
 
-#include "../write_data/Header/structure.h"
-#include "../write_data/Header/write_to_file/write_CSV.h"
+#include "../track_time_attendance/write_data/Header/structure.h"
+#include "../track_time_attendance/write_data/Header/write_to_file/write_CSV.h"
 using namespace std;
 
 
-void calculate_utils(Employee * e,string file_name,string ID,int attendance_cout,int work_hour){
+void calculate_utils(Employee * e,string file_name,string ID,int attendance_cout,int work_hour,float hourly_paid){
 
     const int full_hour = 160;
+    
+    // int overtime = work_hour - full_hour;
+    // int reduction;
+    // if(overtime < 0) reduction = overtime * hourly_paid * (-1);
+    
+    // float overtime_paid = ((1.5 * hourly_paid) * overtime);
+    // int total_cost  = attendance_cout * 8;
 
-    int overtime = full_hour - work_hour;
-    if(overtime < 0) overtime*=(-1);
-
-    int total_cost  = attendance_cout * 8;
-
-    write_CSV(e,file_name,ID,overtime,attendance_cout,work_hour,total_cost);
-
+    // write_CSV(e,file_name,ID,overtime,attendance_cout,work_hour,overtime_paid,total_cost);
 
 }
 
