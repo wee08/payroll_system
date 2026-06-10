@@ -42,17 +42,20 @@ void display_all_data(Employee * e,string file_name){
         << setw(M_space) << "Hourly Paid"
         << setw(M_space) << "Phone";
 
-    if(file_name != attendance_file) cout << endl;
-
+    if(file_name != attendance_file) {
+        cout << endl;
+        cout << string(120,'-') << endl;
+    }
     if(file_name == attendance_file){
         cout << setw(S_space) << "Work Hour"
         << setw(S_space) << "Overtime"
         << setw(S_space) << "Attandance"
-        << setw(S_space) << "Total Cost"
+        << "Total Cost"
         << endl;
+        cout << string(170,'-') << endl;
     }
 
-    cout << string(180,'-') << endl;
+
 
     while(ar != nullptr){
 
@@ -69,8 +72,8 @@ void display_all_data(Employee * e,string file_name){
              << setw(S_space) << ar->work_hour 
              << setw(S_space) << ar->overtime 
              << setw(S_space) << ar->attendance_count
-             << setw(S_space) << ar->total_cost << "$"
-             << setw(S_space) << endl;
+             << ar->total_cost << "\t$"
+             << endl;
 
             ar = ar->next;
     }

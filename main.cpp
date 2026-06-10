@@ -14,7 +14,7 @@ int main(){
     // struct employee = read_CSV function to be able to get the data from linked listñ
     Employee * e = read_CSV(attendance_file);
     
-    // attendance_record(e,employee_file,"F1",2,172);
+    // attendance_record(e,attendance_file,"F1",2,172);
     // sortBubble(e,20);
     display_all_data(e,attendance_file);
 }
