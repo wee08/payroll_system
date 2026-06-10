@@ -57,6 +57,7 @@ Employee * read_CSV(string file_name){
 
         
         e->tail = ar;
+        e->size++;
     }
     file.close();
     

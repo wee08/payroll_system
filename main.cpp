@@ -15,6 +15,6 @@ int main(){
     Employee * e = read_CSV(attendance_file);
     
     // attendance_record(e,attendance_file,"F1",2,172);
-    sortBubble(e,6);
+    sortBubble(e,e->size);
     display_all_data(e,attendance_file);
 }
