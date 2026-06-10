@@ -52,7 +52,7 @@ void display_all_data(Employee * e,string file_name){
         << setw(S_space) << "Attandance"
         << "Total Cost"
         << endl;
-        cout << string(170,'-') << endl;
+        cout << string(173,'-') << endl;
     }
 
 
