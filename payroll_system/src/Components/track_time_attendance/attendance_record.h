@@ -12,20 +12,11 @@ void attendance_record(Employee *e,string file_name,string ID,int attendance_cou
     Attendance_record * ar = e->head;
 
     float hourly_paid;
-    bool isFound = false;
 
     while(ar!=nullptr){
-        if(ar->ID == ID){
             hourly_paid = stoi(ar->hourly_paid);
-            isFound = true;
-        }
         
         ar = ar->next;
-    }
-
-    if(!isFound){
-        cout << "ID doesn't exist!" << endl;
-        return;
     }
 
     calculate_utils(e,file_name,ID,attendance_count,work_hour,hourly_paid);

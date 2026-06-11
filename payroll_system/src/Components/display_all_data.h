@@ -71,7 +71,7 @@ void display_all_data(Employee * e,string file_name){
              << setw(S_space) << ar->work_hour 
              << setw(10) << ar->overtime 
              << setw(S_space) << ar->attendance_count
-             << ar->total_cost << "\t$"
+             << fixed << setprecision(2) << stoi(ar->total_cost) << "\t$"
              << endl;
         }
         ar = ar->next;

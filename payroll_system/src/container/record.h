@@ -8,10 +8,17 @@
 using namespace std;
 
 void record(Employee * e, string file_name){
+
+    Attendance_record * ar = e->head;
+
     string ID;
     int attendance_count;
     int work_hour;
     int choice;
+
+    bool isFound = false;
+
+
     while(true){
         if(e->size == 0){
             cout << "Employee doesn't enter their attendance yet!" << endl;
@@ -26,10 +33,19 @@ void record(Employee * e, string file_name){
         if(choice == 1){
             cout << "Enter your ID: ";
             cin >> ID;
-            cout << endl;
+            while(ar != nullptr){
+                if(ar->ID == ID){
+                    isFound = true;
+                    break;
+                }
+                ar = ar->next;
+            }
+            if(!isFound){
+                cout << "your ID doesn't exist!!!" << endl;
+                break;
+            }
             cout << "Enter your attendance: ";
             cin >> attendance_count;
-            cout << endl;
             cout << "Enter your work hour: ";
             cin >> work_hour;
             cout << endl;
@@ -39,7 +55,9 @@ void record(Employee * e, string file_name){
         }else{
             cout << "Invalid choice!!!" << endl;
         }
+
     }
+
 }
 
 #endif
