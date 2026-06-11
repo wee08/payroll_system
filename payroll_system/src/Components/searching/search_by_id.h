@@ -47,6 +47,9 @@ void search_by_id(Employee * e,string ID){
              << ar->total_cost << "\t$"
              << endl;
 
+        }else{
+            cout << "ID doesn't exist!" << endl;
+            return;
         }
 
         ar = ar->next;

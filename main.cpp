@@ -32,5 +32,5 @@ int main(){
     // Monthly_Salary(attendance_file);
     // tax_information(tax_information_file);
 
-    search_by_id(a,"F1");
+    search_by_id(a,"F00");
 }
