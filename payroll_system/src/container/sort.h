@@ -10,7 +10,7 @@
 using namespace std;
 
 void sort(Employee * e,string file_name){
-    int sort_choice;
+    int choice;
     while(true){
         if(e->size == 0){
             cout << "Employee doesn't enter their attendance yet!" << endl;
@@ -21,15 +21,15 @@ void sort(Employee * e,string file_name){
         cout << "2 -> sort from most to least attendance." << endl;
         cout << "0 -> Exit." << endl;
         cout << "Enter choic: ";
-        cin >> sort_choice;
+        cin >> choice;
         cout << endl;
-        if(sort_choice == 1){
+        if(choice == 1){
             sort_by_least_attendance(e,e->size);
             display_all_data(e,file_name);
-        }else if(sort_choice == 2){
+        }else if(choice == 2){
             sort_by_most_attendance(e,e->size);
             display_all_data(e,file_name);
-        }else if(sort_choice == 0){
+        }else if(choice == 0){
             break;
         }else {
             cout << "Invalid choice!!!" << endl;

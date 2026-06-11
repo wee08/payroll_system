@@ -55,7 +55,7 @@ void write_CSV(Employee * e,string file_name,string ID, int overtime,int attenda
                 << ar->attendance_count << ","
                 << ar->work_hour << ","
                 << ar->overtime_paid << ","
-                << fixed << setprecision(2) << ar->total_cost << "," << endl;
+                << ar->total_cost << "," << endl;
         }
         ar = ar->next;
     }

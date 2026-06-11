@@ -13,8 +13,7 @@ void calculate_utils(Employee * e,string file_name,string ID,int attendance_cout
     const int full_hour = 160;
     
     int overtime = work_hour - full_hour;
-    int reduction;
-    if(overtime < 0) reduction = overtime * hourly_paid * (-1);
+    if(overtime < 0) overtime = 0;
     
     float overtime_paid = ((1.5 * hourly_paid) * overtime);
     int total_cost  = attendance_cout * 8;
