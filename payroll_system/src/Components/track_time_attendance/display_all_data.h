@@ -31,36 +31,36 @@ void display_all_data(Employee * e,string file_name){
     // }
     // cout << endl;
 
-
-
-
-    cout<< left << setw(4) << "ID"
-        << setw(M_space) << "Name"
-        << setw(8) << "Gender"
-        << setw(12) << "Department"
-        << setw(L_space) << "Position"
-        << setw(default_space) << "Salary"
-        << setw(S_space) << "Hourly Paid"
-        << setw(M_space) << "Phone";
-
-    if(file_name != attendance_file) {
-        cout << endl;
-        cout << string(120,'-') << endl;
+    if(file_name == employee_file){
+        cout<< left << setw(4) << "ID"
+            << setw(M_space) << "Name"
+            << setw(8) << "Gender"
+            << setw(12) << "Department"
+            << setw(L_space) << "Position"
+            << setw(default_space) << "Salary"
+            << setw(S_space) << "Hourly Paid"
+            << setw(M_space) << "Phone" << endl;
+            cout << string(120,'-') << endl;
+    }else if(file_name == attendance_file){
+            cout<< left << setw(4) << "ID"
+            << setw(M_space) << "Name"
+            << setw(8) << "Gender"
+            << setw(12) << "Department"
+            << setw(L_space) << "Position"
+            << setw(default_space) << "Salary"
+            << setw(S_space) << "Hourly Paid"
+            << setw(M_space) << "Phone" 
+            << setw(S_space) << "Work Hour"
+            << setw(4) << "Overtime"
+            << setw(S_space) << "Attandance"
+            << "Total Cost"
+            << endl;
+            cout << string(173,'-') << endl;
     }
-    if(file_name == attendance_file){
-        cout << setw(S_space) << "Work Hour"
-        << setw(4) << "Overtime"
-        << setw(S_space) << "Attandance"
-        << "Total Cost"
-        << endl;
-        cout << string(173,'-') << endl;
-    }
-
-
 
     while(ar != nullptr){
-
-        cout << left             
+        if(file_name == employee_file){
+            cout << left             
              << setw(4) << ar->ID
              << setw(M_space) << ar->name
              << setw(8) << ar->gender
@@ -69,21 +69,23 @@ void display_all_data(Employee * e,string file_name){
              << setw(default_space) << ar->salary
              << setw(S_space) << ar->hourly_paid
              << setw(M_space) << ar->phone << endl;
-        
-        if(file_name !=  employee_file && line_count == 1) {
-            cout << endl;
-            cout << string(120,'-') << endl;
-            line_count++;
-        }
-
-        if(file_name == attendance_file){
-            cout << endl << setw(S_space) << ar->work_hour 
+        }else if(file_name == attendance_file){
+            cout << left             
+             << setw(4) << ar->ID
+             << setw(M_space) << ar->name
+             << setw(8) << ar->gender
+             << setw(12) << ar->department
+             << setw(L_space) << ar->position
+             << setw(default_space) << ar->salary
+             << setw(S_space) << ar->hourly_paid
+             << setw(M_space) << ar->phone
+             << setw(S_space) << ar->work_hour 
              << setw(4) << ar->overtime 
              << setw(S_space) << ar->attendance_count
              << ar->total_cost << "\t$"
              << endl;
         }
-            ar = ar->next;
+        ar = ar->next;
     }
 }
 
