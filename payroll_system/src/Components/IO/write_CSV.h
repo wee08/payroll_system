@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <iomanip>
 
 #include "../../Model/structure.h"
 
@@ -54,7 +55,7 @@ void write_CSV(Employee * e,string file_name,string ID, int overtime,int attenda
                 << ar->attendance_count << ","
                 << ar->work_hour << ","
                 << ar->overtime_paid << ","
-                << ar->total_cost << "," << endl;
+                << fixed << setprecision(2) << ar->total_cost << "," << endl;
         }
         ar = ar->next;
     }

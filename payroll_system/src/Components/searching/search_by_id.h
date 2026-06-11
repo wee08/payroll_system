@@ -14,6 +14,8 @@ void search_by_id(Employee * e,string ID){
     const int L_space = 30;
 
     Attendance_record * ar = e->head;
+
+    bool isFound = false;
     while(ar != nullptr){
 
         if(ar->ID == ID){
@@ -46,14 +48,12 @@ void search_by_id(Employee * e,string ID){
              << setw(S_space) << ar->attendance_count
              << ar->total_cost << "\t$"
              << endl;
-
-        }else{
-            cout << "ID doesn't exist!" << endl;
-            return;
+            isFound = true;
+            break;
         }
-
         ar = ar->next;
-    }    
+    } 
+    if(!isFound) cout << "ID doesn't exist!" << endl;
 }
 
 #endif

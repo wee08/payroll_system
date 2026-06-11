@@ -1,8 +1,0 @@
-ID,Name,Gender,Departmen,Position,Monthly Salary,Hourly Paid,Phone,Overtime,Attendance,Work Hour,Overtime Paid,Total Cost
-H2,Heng Dara,M,MKT,Video Editor ,25.5,25.5,11234567,30,22,10,0.000000,16,
-H2,Heng Dara,M,MKT,Video Editor ,25.5,25.5,11234567,30,2,0,0.000000,16,
-H2,Heng Dara,M,MKT,Video Editor ,25.5,25.5,11234567,30,20,1,540.000000,16,
-F1,Sean Manutnithya,M,IT,Software Engineer,3200,20,963111156,30,11,2,900.000000,16,
-F1,Sean Manutnithya,M,IT,Software Engineer,3200,20,963111156,30,0,3,900.000000,16,
-F1,Sean Manutnithya,M,IT,Software Engineer,3200,20,963111156,30,1,5,900.000000,16,
-F1,Sean Manutnithya,M,IT,Software Engineer,3200,20,963111156,30,1,1,900.000000,16,

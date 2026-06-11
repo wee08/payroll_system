@@ -3,11 +3,11 @@
 #include "./payroll_system/src/Model/structure.h"
 #include "./payroll_system/src/Components/track_time_attendance/attendance_record.h"
 #include "./payroll_system/src/Components/display_all_data.h"
-#include "./payroll_system/src/Components/searching/search_by_id.h"
 #include "./payroll_system/src/Components/tax_and_reduction/calculate_reduction.h"
 #include "./payroll_system/src/Components/tax_and_reduction/tax_information.h"
 
 #include "./payroll_system/src/container/sort.h"
+#include "./payroll_system/src/container/search.h"
 int main(){
     string employee_file = "./payroll_system/Data/employee_list.csv";
     string attendance_file = "./payroll_system/Data/attendance.csv";
@@ -35,19 +35,18 @@ int main(){
 
     // search_by_id(a,"F00");
     // calculate_reductoin(attendance_file);
-    string ID;
+    int choice;
     while(true){
-        int choice;
+        cout << endl;
         cout << "Enter your choice: ";
         cin >> choice;
         cout << endl;
-        
         if(choice == 1){
-            if(choice == 1){
-                sort(att_l,attendance_file);
-            }else{
-                cout << "Invalid choice!!!"<< endl;
-            }
+            sort(att_l,attendance_file);
+        }else if(choice == 2){
+            search(att_l);
+        }else{
+            cout << "Invalid choice!!!"<< endl;
         }
     }
 }

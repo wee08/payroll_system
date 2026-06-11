@@ -16,6 +16,7 @@ void sort(Employee * e,string file_name){
             cout << "Employee doesn't enter their attendance yet!" << endl;
             return;
         }
+        cout << endl;
         cout << "1 -> sort from least to most attendance." << endl;
         cout << "2 -> sort from most to least attendance." << endl;
         cout << "0 -> Exit." << endl;
