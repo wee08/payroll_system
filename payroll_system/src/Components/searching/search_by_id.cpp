@@ -12,37 +12,50 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
-void SortBubble(Employee* head, int size) {
-    bool state;
-    Employee *p1, *p2;
+void addEmployee(Employee*& head, int id) {
+    Employee* newNode = new Employee;
+    newNode->id = id;
+    newNode->next = NULL;
 
-    for(int i = 0; i < size - 1; i++) {
-        state = false;
-
-        p1 = head;
-        p2 = head->next;
-
-        for(int j = 0; j < size - i - 1; j++) {
-            if(p1->id > p2->id) {
-                swap(&p1->id, &p2->id);
-                state = true;
-            }
-
-            p1 = p1->next;
-            p2 = p2->next;
-        }
-
-        if(state == false) {
-            break;
-        }
+    if(head == NULL) {
+        head = newNode;
+    } else {
+        Employee* temp = head;
+        while(temp->next != NULL)
+            temp = temp->next;
+        temp->next = newNode;
     }
 }
 
+void SortBubble(Employee* head, int size) {
+    if(head == NULL)
+        return;
+
+    bool state;
+
+    do {
+        state = false;
+        Employee* current = head;
+
+        while(current->next != NULL) {
+            if(current->id > current->next->id) {
+                swap(&current->id, &current->next->id);
+                state = true;
+            }
+
+            current = current->next;
+        }
+
+    } while(state);
+}
+
 int main() {
-    Employee* head = new Employee{7, NULL};
-    head->next = new Employee{8, NULL};
-    head->next->next = new Employee{4, NULL};
-    head->next->next->next = new Employee{3, NULL};
+    Employee* head = NULL;
+
+    addEmployee(head, 7);
+    addEmployee(head, 8);
+    addEmployee(head, 4);
+    addEmployee(head, 3);
 
     SortBubble(head, 4);
 
@@ -53,7 +66,6 @@ int main() {
     }
 
     cout << endl;
-
     // Search by ID
     int searchID;
     cout << "Enter ID to search: ";

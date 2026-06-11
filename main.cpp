@@ -5,17 +5,18 @@
 #include "./payroll_system/src/Components/track_time_attendance/display_all_data.h"
 #include "./payroll_system/src/Components/sorting/sort_by_least_attendance.h"
 #include "./payroll_system/src/Components/sorting/sort_by_most_attendance.h"
-
+#include "./payroll_system/src/Components/searching/search_by_id.h"
 int main(){
     string employee_file = "./payroll_system/Data/employee_list.csv";
     string attendance_file = "./payroll_system/Data/attendance.csv";
     // write_CSV(employee_file);
     // write_CSV("../../Data/attendance.csv");
     // Employee * e = read_CSV("../../Data/attendance.csv");
-    // struct employee = read_CSV function to be able to get the data from linked listñ
+    // struct employee = read_CSV function to be able to get the data from linked list
     Employee * e = read_CSV(attendance_file);
     
     // attendance_record(e,attendance_file,"F1",2,172);
-    sort_by_most_attendance(e,e->size);
+    sort_by_least_attendance(e,e->size);
+    // search_by_id(e,"F1");
     display_all_data(e,attendance_file);
 }

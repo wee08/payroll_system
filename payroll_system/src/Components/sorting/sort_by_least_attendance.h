@@ -21,9 +21,12 @@ void sort_by_least_attendance(Employee* e, int size) {
 
         Attendance_record * ar_1 = e->head;
         Attendance_record * ar_2 = e->head->next;
-
+        cout << ar_1->attendance_count;
+        cout << ar_2->attendance_count;
         for(int j = 0; j < size - i - 1; j++) {
-            if(stoi(ar_1->attendance_count) > stoi(ar_2->attendance_count)) {
+            int attendance_1 = stoi(ar_1->attendance_count);
+            int attendance_2 = stoi(ar_2->attendance_count);
+            if(attendance_1 > attendance_2) {
                 swap(ar_1->ID, ar_2->ID);
                 swap(ar_1->name, ar_2->name);
                 swap(ar_1->gender, ar_2->gender);

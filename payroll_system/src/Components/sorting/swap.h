@@ -4,16 +4,12 @@
 #include <string>
 using namespace std;
 
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-void swap(string &a, string &b) {
-    string temp = a;
+void swap(int &a, int &b) {
+    int temp = a;
     a = b;
     b = temp;
 }
+
+
 
 #endif
