@@ -2,7 +2,7 @@
 #include "./payroll_system/src/Components/IO/write_CSV.h"
 #include "./payroll_system/src/Model/structure.h"
 #include "./payroll_system/src/Components/track_time_attendance/attendance_record.h"
-#include "./payroll_system/src/Components/track_time_attendance/display_all_data.h"
+#include "./payroll_system/src/Components/display_all_data.h"
 #include "./payroll_system/src/Components/sorting/sort_by_least_attendance.h"
 #include "./payroll_system/src/Components/sorting/sort_by_most_attendance.h"
 #include "./payroll_system/src/Components/searching/search_by_id.h"

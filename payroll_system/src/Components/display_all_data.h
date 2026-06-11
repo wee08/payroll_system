@@ -5,7 +5,7 @@
 #include <iomanip>
 #include <fstream>
 
-#include "../../Model/structure.h"
+#include "../Model/structure.h"
 
 void display_all_data(Employee * e,string file_name){
 
@@ -19,17 +19,6 @@ void display_all_data(Employee * e,string file_name){
 
     string employee_file = "./payroll_system/Data/employee_list.csv";
     string attendance_file = "./payroll_system/Data/attendance.csv";
-
-    // ifstream file(file_name);
-
-    // string header;
-    // getline(file,header);
-    // stringstream ss(header);
-    // string table_head;
-    // while (getline(ss, table_head, ',')) {
-    //     cout << left << setw(S_space) << table_head;
-    // }
-    // cout << endl;
 
     if(file_name == employee_file){
         cout<< left << setw(4) << "ID"
