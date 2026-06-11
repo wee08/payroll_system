@@ -25,7 +25,6 @@ Employee * read_CSV(string file_name){
     string line;
     int locatoin = 0; // 1 - 20
     getline(file,line);
-    
 
     while(getline(file,line)){
         locatoin = line.find(',');
