@@ -163,13 +163,14 @@ public:
 void Load_and_display_all() {
     EmployeeQueue queue;
 
+    string employee_file = "../../../Data/employee_list.csv";
+    string attendance_file = "../../../Data/attendance.csv";
     // 1. Open all three CSV files
-    ifstream fileFull("Fulltime_Employee.csv");
-    ifstream fileHourly("Hourly_Employee.csv");
-    ifstream fileAtt("Attendence.csv");
+    ifstream fileFull(employee_file);
+    ifstream fileAtt(attendance_file);
 
     // Check if files are opened successfully
-    if (!fileFull.is_open() || !fileHourly.is_open() || !fileAtt.is_open()) {
+    if (!fileFull.is_open() || !fileAtt.is_open()) {
         cout << "Error: Cannot open CSV files!" << endl;
         return;
     }
@@ -178,7 +179,6 @@ void Load_and_display_all() {
 
     // Skip the header row in each file
     getline(fileFull, lineFull);
-    getline(fileHourly, lineHourly);
     getline(fileAtt, lineAtt);
 
     // 2. Read Full-Time Employee records first
@@ -211,9 +211,9 @@ void Load_and_display_all() {
 
         emp->ID = id;
         emp->Name = name;
-        emp->Baseslary = stof(salaryStr);
-        emp->Overtime_Hours = stof(otStr);
-        emp->Absence_Count = stof(absStr);
+        emp->Baseslary = stoi(salaryStr);
+        emp->Overtime_Hours = stoi(otStr);
+        emp->Absence_Count = stoi(absStr);
 
         // Calculate NSSF contribution (2% with maximum salary cap of $300)
         float contribution_wage = emp->Baseslary;
@@ -240,7 +240,7 @@ void Load_and_display_all() {
 
     // 3. Read Hourly Employee records
     // Continue reading attendance records after full-time employees
-    while (getline(fileHourly, lineHourly) && getline(fileAtt, lineAtt)) {
+    while (getline(fileAtt, lineAtt)) {
         if (lineHourly.empty() || lineAtt.empty()) continue;
 
         // Read employee information from Hourly_Employee.csv
@@ -282,7 +282,7 @@ void Load_and_display_all() {
         float hoursWorked = stof(workHr);
 
         emp->Baseslary = hoursWorked * rate;
-
+        
         emp->Overtime_Hours = stof(otStr);
         emp->Absence_Count = stof(absStr);
 
@@ -307,7 +307,6 @@ void Load_and_display_all() {
 
     // Close all files
     fileFull.close();
-    fileHourly.close();
     fileAtt.close();
 
     // Display payroll report title
