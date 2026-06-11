@@ -5,7 +5,7 @@
 #include <fstream>
 #include <iomanip>
 using namespace std;
-void tax_information(){ 
+void tax_information(string file_name){ 
     const int default_space = 8;
     const int S_space = 12;
     const int M_space = 18;
@@ -15,7 +15,7 @@ void tax_information(){
     int location=0;
     ifstream tax_info;
     
-    tax_info.open("tax_information.csv");
+    tax_info.open(file_name);
     while(getline(tax_info, line)){
         location=line.find(",");
         salary=line.substr(0,location);

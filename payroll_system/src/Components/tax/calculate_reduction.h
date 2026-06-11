@@ -30,12 +30,12 @@ void salary_after_deduction(double salary,double ot,double attendance, double ho
     cout<<"Salary for the month(After Tax): "<<final_salary<<endl;
     cout<<endl;
 }
-void Monthly_Salary(){
+void Monthly_Salary(string file_name){
     string line, first="",monthly_salary="",last="",hourly_paid="",overtime="",attendance="",mid="";
     int location=0; 
     double salary,hour_paid,OT,absence;
     ifstream monthlySalary;
-    monthlySalary.open("attendance.csv");
+    monthlySalary.open(file_name);
     getline(monthlySalary,line);
     while(getline(monthlySalary, line)){
         for(int i=0;i<5;i++){
@@ -50,15 +50,19 @@ void Monthly_Salary(){
         location=line.find(",");
         monthly_salary=line.substr(0,location);
         line=line.substr(location+1,line.length());
+
         location=line.find(",");
         hourly_paid=line.substr(0,location);
         line=line.substr(location+1,line.length());
+
         location=line.find(",");
         mid=line.substr(0, location);
         line=line.substr(location+1,line.length());
+
         location=line.find(",");
         overtime=line.substr(0,location);
         line=line.substr(location+1,line.length());
+
         location=line.find(",");
         attendance=line.substr(0,location);
         last=line.substr(location+1,line.length());

@@ -87,6 +87,7 @@ void display_all_data(Employee * e,string file_name){
         }
         ar = ar->next;
     }
+    cout << endl;
 }
 
 #endif 
