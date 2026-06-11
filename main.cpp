@@ -6,8 +6,8 @@
 #include "./payroll_system/src/Components/sorting/sort_by_least_attendance.h"
 #include "./payroll_system/src/Components/sorting/sort_by_most_attendance.h"
 #include "./payroll_system/src/Components/searching/search_by_id.h"
-#include "./payroll_system/src/Components/tax/calculate_reduction.h"
-#include "./payroll_system/src/Components/tax/tax_information.h"
+#include "./payroll_system/src/Components/tax_and_reduction/calculate_reduction.h"
+#include "./payroll_system/src/Components/tax_and_reduction/tax_information.h"
 int main(){
     string employee_file = "./payroll_system/Data/employee_list.csv";
     string attendance_file = "./payroll_system/Data/attendance.csv";
@@ -33,4 +33,7 @@ int main(){
     // tax_information(tax_information_file);
 
     search_by_id(a,"F00");
+    calculate_reductoin(attendance_file);
+    tax_information(tax_information_file);
+    
 }
