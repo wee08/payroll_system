@@ -13,10 +13,12 @@ int main(){
     // write_CSV("../../Data/attendance.csv");
     // Employee * e = read_CSV("../../Data/attendance.csv");
     // struct employee = read_CSV function to be able to get the data from linked list
-    Employee * e = read_CSV(attendance_file);
+    Employee * e = read_CSV(employee_file);
     
-    // attendance_record(e,attendance_file,"F1",2,172);
-    sort_by_least_attendance(e,e->size);
+    // attendance_record(e,employee_file,"F1",2,172);
+    sort_by_most_attendance(e,e->size);
     // search_by_id(e,"F1");
-    display_all_data(e,attendance_file);
+    display_all_data(e,employee_file);
+    // sort_by_least_attendance(e,e->size);
+    // display_all_data(e,attendance_file);
 }

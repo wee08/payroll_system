@@ -13,6 +13,7 @@ void display_all_data(Employee * e,string file_name){
     const int S_space = 12;
     const int M_space = 18;
     const int L_space = 30;
+    int line_count = 1;
 
     Attendance_record * ar = e->head;
 
@@ -33,13 +34,13 @@ void display_all_data(Employee * e,string file_name){
 
 
 
-    cout<< left << setw(default_space) << "ID"
+    cout<< left << setw(4) << "ID"
         << setw(M_space) << "Name"
-        << setw(default_space) << "Gender"
-        << setw(M_space) << "Department"
+        << setw(8) << "Gender"
+        << setw(12) << "Department"
         << setw(L_space) << "Position"
         << setw(default_space) << "Salary"
-        << setw(M_space) << "Hourly Paid"
+        << setw(S_space) << "Hourly Paid"
         << setw(M_space) << "Phone";
 
     if(file_name != attendance_file) {
@@ -48,7 +49,7 @@ void display_all_data(Employee * e,string file_name){
     }
     if(file_name == attendance_file){
         cout << setw(S_space) << "Work Hour"
-        << setw(S_space) << "Overtime"
+        << setw(4) << "Overtime"
         << setw(S_space) << "Attandance"
         << "Total Cost"
         << endl;
@@ -60,21 +61,28 @@ void display_all_data(Employee * e,string file_name){
     while(ar != nullptr){
 
         cout << left             
-             << setw(default_space) << ar->ID
+             << setw(4) << ar->ID
              << setw(M_space) << ar->name
-             << setw(default_space) << ar->gender
-             << setw(M_space) << ar->department
+             << setw(8) << ar->gender
+             << setw(12) << ar->department
              << setw(L_space) << ar->position
              << setw(default_space) << ar->salary
-             << setw(M_space) << ar->hourly_paid
-             << setw(M_space) << ar->phone
+             << setw(S_space) << ar->hourly_paid
+             << setw(M_space) << ar->phone << endl;
+        
+        if(file_name !=  employee_file && line_count == 1) {
+            cout << endl;
+            cout << string(120,'-') << endl;
+            line_count++;
+        }
 
-             << setw(S_space) << ar->work_hour 
-             << setw(S_space) << ar->overtime 
+        if(file_name == attendance_file){
+            cout << endl << setw(S_space) << ar->work_hour 
+             << setw(4) << ar->overtime 
              << setw(S_space) << ar->attendance_count
              << ar->total_cost << "\t$"
              << endl;
-
+        }
             ar = ar->next;
     }
 }

@@ -6,19 +6,24 @@
 #include "../../Model/structure.h"
 #include "./swap.h"
 
-void sort_by_most_attendance(Employee * e, int size){
-    if(e->head == nullptr || e->head->next == nullptr) return;
+void sort_by_most_attendance(Employee* e, int size) {
+
+    if(e->head == nullptr || e->head->next == nullptr)return;
 
     bool state = false;
-    
-    for(int i = 0; i < size - 1; i++){
+
+    for(int i = 0; i < size - 1; i++) {
         state = false;
 
         Attendance_record * ar_1 = e->head;
         Attendance_record * ar_2 = e->head->next;
 
-        for(int j = 0; j < size - i - 1; j++){
-            if(stoi(ar_1->attendance_count) < stoi(ar_2->attendance_count)){
+        for(int j = 0; j < size - i - 1; j++) {
+            int attendance_1 = 0;
+            int attendance_2 = 0;
+            if(!ar_1->attendance_count.empty()) attendance_1 = stoi(ar_1->attendance_count);
+            if(!ar_2->attendance_count.empty()) attendance_2 = stoi(ar_2->attendance_count);
+            if(attendance_1  < attendance_2) {
                 swap(ar_1->ID, ar_2->ID);
                 swap(ar_1->name, ar_2->name);
                 swap(ar_1->gender, ar_2->gender);
