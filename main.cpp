@@ -25,8 +25,8 @@ int main(){
         cin >> choice;
         cout << endl;
         if(choice == 1){
-            salary(attendance_file);
-            // record(emp_l,attendance_file);
+            // salary(attendance_file);
+            record(emp_l,attendance_file);
         }else{
             cout << "Invalid choice!!!"<< endl;
         }
