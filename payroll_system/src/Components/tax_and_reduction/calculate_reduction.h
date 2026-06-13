@@ -6,7 +6,7 @@
 #include "./salary_after_deduction.h"
 #include <iomanip>
 using namespace std;
-void calculate_reductoin(string filename){
+void calculate_reductoin(string filename,string final_salary_file){
     const int default_space = 8;
     const int S_space = 12;
     const int M_space = 18;
@@ -78,9 +78,12 @@ void calculate_reductoin(string filename){
             <<setw(S_space)<<OT
             <<setw(M_space)<<absence;
 
-        salary_after_deduction(salary,OT,absence,hour_paid);
+        salary_after_deduction(salary,OT,absence,hour_paid,final_salary_file);
     }
-
     monthlySalary.close();
+
+
+
+    
 }
 #endif

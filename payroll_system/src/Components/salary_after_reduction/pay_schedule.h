@@ -3,16 +3,15 @@
 
 #include <iostream>
 #include <string>
-#include <fstream>
 
-#include "./structure.h"
-#include "../Components/IO/read_CSV.h"
-
+#include "../../Model/structure.h"
+#include "../../../Data/attendance.csv"
+#include "../IO/read_CSV.h"
 using namespace std;
 
 struct Employee {
     int workingDay;
-    string names;
+    string name;
     double pay;
 };
 
@@ -21,10 +20,10 @@ struct Node {
     Node* next;
 };
 
-void addEmployee(Node *& head, int workingDay, string names, double pay) {
-    Node * newNode = new Node();
+void addEmployee(Node*& head, int workingDay, string name, double pay) {
+    Node* newNode = new Node;
     newNode->data.workingDay = workingDay;
-    newNode->data.names = names;
+    newNode->data.name = name;
     newNode->data.pay = pay;
     newNode->next = NULL;
 
@@ -64,18 +63,40 @@ void SortBubble(Node* head) {
     } while(state);
 }
 
-void function(){
-    string file_name = "../../Data/employee_list.csv";
-    Employee * emp = read_CSV(file_name);
-    ifstream files(file_name);
-    string names;
-    int id;
-    double salary;
-    while (files >> ar->name >> ar->ID >> ar->salary){
-        cout << "Name:" << names;
-        cout << "ID" << id;
-        cout << "Salary: $" << salary<< endl;
+void display(Node* head) {
+    double total = 0;
+    Node* temp = head;
+    cout << "Name, Days, Pay\n";
+
+    while(temp != NULL) {
+        double salary = temp->data.workingDay * temp->data.pay;
+
+        cout << temp->data.name << "\t"
+             << temp->data.workingDay << "\t"
+             << salary << endl;
+
+        total += salary;
+        temp = temp->next;
     }
-    files.close();
+
+    cout << "Total = $" << total << endl;
 }
+
+int main() {
+    Node* head = NULL;
+
+    addEmployee(head, 22, "Sovan", 20);
+    addEmployee(head, 20, "Dara", 20);
+    addEmployee(head, 18, "Rith", 20);
+    addEmployee(head, 21, "Vannak", 20);
+    addEmployee(head, 19, "Nita", 20);
+
+    SortBubble(head);
+
+    display(head);
+
+    return 0;
+}
+
+
 #endif

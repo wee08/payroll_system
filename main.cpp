@@ -7,6 +7,7 @@ int main(){
     string employee_file = "./payroll_system/Data/employee_list.csv";
     string attendance_file = "./payroll_system/Data/attendance.csv";
     string tax_information_file = "./payroll_system/Data/tax_information.csv";
+    string final_salary_file = "./payroll_system/Data/final_salary.csv";
 
     Employee * emp_l = read_CSV(employee_file);
     Employee * att_l = read_CSV(attendance_file);
@@ -19,7 +20,8 @@ int main(){
         cout << endl;
         if(choice == 1){
             // salary(attendance_file);
-            record(emp_l,attendance_file);
+            // record(emp_l,attendance_file);
+            calculate_reductoin(attendance_file,final_salary_file);
         }else{
             cout << "Invalid choice!!!"<< endl;
         }

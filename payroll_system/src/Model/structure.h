@@ -30,4 +30,15 @@ struct Employee{
     Attendance_record * head;
     Attendance_record * tail;
 };
+
+struct Payday {
+    int workingDay;
+    string name;
+    double pay;
+};
+
+struct Node {
+    Payday data;
+    Node* next;
+};
 #endif
