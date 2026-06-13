@@ -1,12 +1,3 @@
-#include "./payroll_system/src/Components/IO/write_CSV.h"
-#include "./payroll_system/src/Components/IO/write_CSV.h"
-#include "./payroll_system/src/Model/structure.h"
-#include "./payroll_system/src/Components/track_time_attendance/attendance_record.h"
-#include "./payroll_system/src/Components/track_time_attendance/update_attendance.h"
-#include "./payroll_system/src/Components/display_all_data.h"
-#include "./payroll_system/src/Components/tax_and_reduction/calculate_reduction.h"
-#include "./payroll_system/src/Components/tax_and_reduction/tax_information.h"
-
 
 #include "./payroll_system/src/container/sort.h"
 #include "./payroll_system/src/container/search.h"

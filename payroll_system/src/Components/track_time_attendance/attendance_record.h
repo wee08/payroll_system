@@ -26,7 +26,6 @@ void attendance_record(Employee *e,string file_name,string target_ID,int attenda
      while(getline(find_ID,line)){
         string ID = line.substr(0,line.find(','));
         if(ID == target_ID){
-            cout << "This employee have added their data" << endl;
             calculate_utils(e,file_name,target_ID,attendance_count,work_hour,hourly_paid);
         }else{
             content += line + "\n";

@@ -1,4 +1,4 @@
 ID,Name,Gender,Departmen,Position,Monthly Salary,Hourly Paid,Phone,Overtime,Attendance,Work Hour,Overtime Paid,Total Cost
-H2,Heng Dara,M,MKT,Video Editor ,25.5,25.5,11234567,0,6,100,0.000000,48,
 H3,Leap Phea,F,IT,API Developer,30,30,12345678,0,1,120,0.000000,8,
 F2,Tang Chandara,M,MKT,Graphic Designer,1200,7.5,123344896,40,1,200,720.000000,8,
+H2,Heng Dara,M,MKT,Video Editor ,25.5,25.5,11234567,0,0,120,0.000000,0,
