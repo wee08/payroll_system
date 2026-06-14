@@ -15,15 +15,6 @@ int main(){
     int choice;
     while(true){
         cout << endl;
-        cout << "Enter your choice: ";
-        cin >> choice;
-        cout << endl;
-        if(choice == 1){
-            // salary(attendance_file);
-            // record(emp_l,attendance_file);
-            calculate_reductoin(attendance_file,final_salary_file);
-        }else{
-            cout << "Invalid choice!!!"<< endl;
-        }
+        record(emp_l,attendance_file);
     }
 }

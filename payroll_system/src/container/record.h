@@ -2,6 +2,8 @@
 #define RECORD_H
 
 #include <iostream>
+#include <cctype>
+#include <algorithm>
 
 #include "../Components/track_time_attendance/attendance_record.h"
 #include "../Model/structure.h"
@@ -12,6 +14,7 @@ void record(Employee * e, string file_name){
     Attendance_record * ar = e->head;
 
     string ID;
+    string temp;
     int attendance_count;
     int work_hour;
     int choice;
@@ -32,7 +35,13 @@ void record(Employee * e, string file_name){
         cout << endl;
         if(choice == 1){
             cout << "Enter your ID: ";
-            cin >> ID;
+            cin >> temp;
+
+            ID = temp;
+            for(char& c : ID){
+                c = toupper(c);
+            }
+
             while(ar != nullptr){
                 if(ar->ID == ID){
                     isFound = true;
@@ -46,6 +55,11 @@ void record(Employee * e, string file_name){
             }
             cout << "Enter your attendance: ";
             cin >> attendance_count;
+            if(attendance_count > 20){
+                cout << "INVALID ATTENDANCE INPUT" << endl;
+                cout << "Work only 20 days / month" << endl;
+                return;
+            }
             cout << "Enter your work hour: ";
             cin >> work_hour;
             cout << endl;

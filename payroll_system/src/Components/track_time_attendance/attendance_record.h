@@ -36,7 +36,6 @@ void attendance_record(Employee *e,string file_name,string target_ID,int attenda
 
     while(ar!=nullptr){
             hourly_paid = stoi(ar->hourly_paid);
-        
         ar = ar->next;
     }
 
