@@ -1,5 +1,3 @@
-#ifndef CONVERT_ID_H
-#define CONVERT_ID_H
 
 #include <iostream>
 #include <string>
@@ -13,4 +11,8 @@ string convert_ID(string ID){
     return ID;
 }
 
-#endif
+int main(){
+    string id = convert_ID("f1");
+    cout << id;
+    
+}

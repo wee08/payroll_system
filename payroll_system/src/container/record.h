@@ -15,7 +15,6 @@ void record(Employee * e, string file_name){
     Attendance_record * ar = e->head;
 
     string ID;
-    string temp;
     int attendance_count;
     int work_hour;
     int choice;
@@ -36,9 +35,9 @@ void record(Employee * e, string file_name){
         cout << endl;
         if(choice == 1){
             cout << "Enter your ID: ";
-            cin >> temp;
+            cin >> ID;
 
-            ID = convert_ID(temp,ID);
+            ID = convert_ID(ID);
 
             while(ar != nullptr){
                 if(ar->ID == ID){

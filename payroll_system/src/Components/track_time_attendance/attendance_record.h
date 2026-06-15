@@ -8,6 +8,8 @@
 #include "../IO/write_CSV.h"
 #include "../../utils/calculate_utils.h"
 #include "./update_attendance.h"
+#include "../convert_ID.h"
+
 using namespace std;
 
 void attendance_record(Employee *e,string file_name,string target_ID,int attendance_count,int work_hour){
@@ -23,8 +25,13 @@ void attendance_record(Employee *e,string file_name,string target_ID,int attenda
     string line;
     float hourly_paid;
 
+
+
      while(getline(find_ID,line)){
         string ID = line.substr(0,line.find(','));
+
+        target_ID = convert_ID(target_ID);
+        
         if(ID == target_ID){
             calculate_utils(e,file_name,target_ID,attendance_count,work_hour,hourly_paid);
         }else{
