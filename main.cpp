@@ -13,8 +13,7 @@ int main(){
     Employee * att_l = read_CSV(attendance_file);
 
     int choice;
-    while(true){
         cout << endl;
-        record(emp_l,attendance_file);
-    }
+        // record(emp_l,attendance_file);
+        salary(attendance_file,final_salary_file);
 }
