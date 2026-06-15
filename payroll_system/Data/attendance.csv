@@ -1,3 +1,6 @@
 ID,Name,Gender,Departmen,Position,Monthly Salary,Hourly Paid,Phone,Overtime,Attendance,Work Hour,Overtime Paid,Total Cost
 F1,Sean Manutnithya,M,IT,Software Engineer,3200,20,963111156,20,20,180,360.000000,0,
-F10,Camado Tanjiro,F,F&L,Accounting,670,4.1875,960400500,30,20,190,540.000000,0,
+F2,Tang Chandara,M,MKT,Graphic Designer,1200,7.5,123344896,0,20,160,0.000000,0,
+F3,Tang Sovanoudom,M,HR,HR Manager,5000,31.25,122223333,0,20,160,0.000000,0,
+F10,Camado Tanjiro,F,F&L,Accounting,670,4.1875,960400500,0,20,160,0.000000,0,
+,
