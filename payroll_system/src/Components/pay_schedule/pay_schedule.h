@@ -15,13 +15,7 @@ string file_path = "../../../Data/attendance.csv";
 string final_salary_file = "../../../Data/final_salary.csv";
 Employee * att_l = read_CSV(file_path);
 
-void swapPayday(Payday& a, Payday& b) {
-    Payday temp = a;
-    a = b;
-    b = temp;
-}
-
-void display(Node* head) {
+void pay_schedule(Node* head) {
     double total = 0;
     double salary;
     Node* temp = head;
@@ -48,7 +42,7 @@ void display(Node* head) {
         cout<< left 
             << setw(20) <<ar->name
             << setw(12) << salary
-            << "[ 12-Jun-2026 ]" << endl;
+            << "[ 20-Jun-2026 ]" << endl;
 
         ar = ar->next;
     }
