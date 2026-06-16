@@ -8,7 +8,6 @@
 #include <iomanip>
 #include <ctime>
 
-#include "../Salary_after_reduction/Linked_list.h"
 
 using namespace std;
 

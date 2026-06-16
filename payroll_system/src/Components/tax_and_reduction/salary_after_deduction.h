@@ -6,6 +6,7 @@
 #include <fstream>
 #include <string>
 
+#include "./calcuate_total_salary.h"
 using namespace std;
 
 string file_name = "../../../Data/final_saraly.csv";
@@ -51,14 +52,8 @@ void salary_after_deduction(double salary,double ot,double attendance, double ho
     file << final_salary << "," << endl;
     file.close();
 
+    calcuate_total_salary(file_name);
 }
-void total_salary(string final_salary_file){
-    string line="";
-    double final_salary;
-    ifstream final_salary_str;
-    final_salary_str.open(final_salary_file);
-    while(getline(final_salary_str, line)){
-        final_salary=stod(line);
-    }
-}
+
+
 #endif
