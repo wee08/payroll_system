@@ -17,7 +17,13 @@ void calculate_utils(Employee * e,string file_name,string ID,int attendance_cout
     if(overtime < 0) overtime = 0;
     
     float overtime_paid = ((1.5 * hourly_paid) * overtime);
-    int total_cost  = (full_attendance - attendance_cout) * 8  * hourly_paid;
+    int total_cost  = (full_attendance - attendance_cout) * 8 * hourly_paid;
+
+    // cout << overtime  << " "
+    //     << overtime_paid << " "
+    //     << attendance_cout << " " 
+    //     << hourly_paid << " "
+    //     << total_cost << endl;
 
     write_CSV(e,file_name,ID,overtime,attendance_cout,work_hour,overtime_paid,total_cost);
 }

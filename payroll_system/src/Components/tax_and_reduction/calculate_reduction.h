@@ -3,8 +3,10 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "./salary_after_deduction.h"
 #include <iomanip>
+
+#include "./salary_after_deduction.h"
+#include "../IO/write_CSV.h"
 using namespace std;
 
 void calculate_reductoin(string filename,string final_salary_file){
@@ -83,10 +85,7 @@ void calculate_reductoin(string filename,string final_salary_file){
     }
     total_salary(final_salary_file);
 
-    monthlySalary.close();
-    
 
-
-    
+    monthlySalary.close();    
 }
 #endif

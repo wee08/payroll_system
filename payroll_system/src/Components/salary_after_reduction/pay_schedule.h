@@ -3,100 +3,56 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 #include "../../Model/structure.h"
-#include "../../../Data/attendance.csv"
 #include "../IO/read_CSV.h"
+#include "../../Model/structure.h"
 using namespace std;
 
-struct Employee {
-    int workingDay;
-    string name;
-    double pay;
-};
+string file_path = "../../../Data/attendance.csv";
+string final_salary_file = "../../../Data/final_salary.csv";
+Employee * att_l = read_CSV(file_path);
 
-struct Node {
-    Employee data;
-    Node* next;
-};
-
-void addEmployee(Node*& head, int workingDay, string name, double pay) {
-    Node* newNode = new Node;
-    newNode->data.workingDay = workingDay;
-    newNode->data.name = name;
-    newNode->data.pay = pay;
-    newNode->next = NULL;
-
-    if(head == NULL) {
-        head = newNode;
-    } else {
-        Node* temp = head;
-        while(temp->next != NULL)
-            temp = temp->next;
-        temp->next = newNode;
-    }
-}
-
-void swapEmployee(Employee& a, Employee& b) {
-    Employee temp = a;
+void swapPayday(Payday& a, Payday& b) {
+    Payday temp = a;
     a = b;
     b = temp;
 }
 
-void SortBubble(Node* head) {
-    if(head == NULL)
-        return;
-
-    bool state;
-
-    do {
-        state = false;
-        Node* current = head;
-
-        while(current->next != NULL) {
-            if(current->data.workingDay > current->next->data.workingDay) {
-                swapEmployee(current->data, current->next->data);
-                state = true;
-            }
-            current = current->next;
-        }
-    } while(state);
-}
-
 void display(Node* head) {
     double total = 0;
+    double salary;
     Node* temp = head;
-    cout << "Name, Days, Pay\n";
-
-    while(temp != NULL) {
-        double salary = temp->data.workingDay * temp->data.pay;
-
-        cout << temp->data.name << "\t"
-             << temp->data.workingDay << "\t"
-             << salary << endl;
-
+    Attendance_record * ar = att_l->head;
+    cout << "Name, Pay Date, Payment\n";
+    
+    ifstream file_out;
+    file_out.open(final_salary_file);
+    if(!file_out.is_open()){
+        cout << "not open" << endl;
+        return;
+    }
+    string line;
+    stringstream ss;
+    while(getline(file_out,line)) {
+        salary = stod(line);
         total += salary;
-        temp = temp->next;
+
+        cout << salary << endl;
+
+        // double salary = temp->data.workingDay * temp->data.pay;
+
+        // cout << temp->data.name << "\t"
+        //      << temp->data.workingDay << "\t"
+        //      << salary << endl;
+
+        // total += salary;
     }
 
     cout << "Total = $" << total << endl;
 }
 
-int main() {
-    Node* head = NULL;
-
-    addEmployee(head, 22, "Sovan", 20);
-    addEmployee(head, 20, "Dara", 20);
-    addEmployee(head, 18, "Rith", 20);
-    addEmployee(head, 21, "Vannak", 20);
-    addEmployee(head, 19, "Nita", 20);
-
-    SortBubble(head);
-
-    display(head);
-
-    return 0;
-}
 
 
 #endif

@@ -8,11 +8,14 @@
 
 #include "../../Model/structure.h"
 #include "../../Model/create_new_employee.h"
+#include "../../Model/create_new_employee.h"
 
 using namespace std;
 
 Employee * read_CSV(string file_name){
     Employee * e  = create_new_employee();
+
+    string file_condition = "../../../Data/final_salary.csv";
 
     ifstream file;
     file.open(file_name);
@@ -39,7 +42,7 @@ Employee * read_CSV(string file_name){
         }   
 
         stringstream ss(line);
-        
+                
         getline(ss,ar->ID,',');
         getline(ss,ar->name,',');
         getline(ss,ar->gender,',');

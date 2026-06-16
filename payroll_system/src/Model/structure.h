@@ -38,6 +38,9 @@ struct Payday {
 };
 
 struct Node {
+    int workingDay;
+    string name;
+    double payment;
     Payday data;
     Node* next;
 };
