@@ -9,7 +9,7 @@
 
 using namespace std;
 
-struct Employee {
+struct Employee_info {
     string ID;
     string Name;
     float Baseslary;        
@@ -28,9 +28,9 @@ struct Employee {
     string payrollsubmitdate;
 };
 
-struct Node {
-    Employee data;          
-    Node* next;
+struct Box {
+    Employee_info data;          
+    Box* next;
 };
 
 #endif 

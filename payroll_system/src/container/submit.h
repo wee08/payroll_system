@@ -1,18 +1,17 @@
+#ifndef SUBMIT_H
+#define SUBMIT_H
+
 #include <iostream>
-#include "Submit_payroll_tax_payment_filling.h" // Your header file
-#include "../../Model/Linked_list.h"
+#include "../Components/tax_filling_history/Submit_payroll_tax_payment_filling.h" // Your header file
+#include "../Model/Linked_list.h"
 
 using namespace std;
 
-int main() {
-
-    string payroll_report_file = "../../../Data/payroll_report.csv";
-    string tax_report_file = "../../../Data/tax_report.csv";
+void submit(string payroll_file,string tax_report_file) {
 
     cout << "Processing payroll report generation..." << endl;
     
-    Node* head = loadPayrollFromCSV(payroll_report_file);
-    
+    Box* head = loadPayrollFromCSV(payroll_file);
     if (head != nullptr) {
         submitPayrollTaxPaymentAndFiling(tax_report_file, head);
         cout << "Task completed! Please check the 'Tax_report.csv' file." << endl;
@@ -21,9 +20,11 @@ int main() {
     }
     
     while (head != nullptr) {
-        Node* temp = head;
+        Box* temp = head;
         head = head->next;
         delete temp;
     }
-    return 0;
+
 }
+
+#endif

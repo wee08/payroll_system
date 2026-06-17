@@ -29,7 +29,7 @@ string getSubmissionDate() {
     return ss.str();
 }
 
-void submitPayrollTaxPaymentAndFiling(string Tax_report, Node* head) {
+void submitPayrollTaxPaymentAndFiling(string Tax_report, Box* head) {
     ofstream file(Tax_report);
     if (!file.is_open()) {
         cerr << "[Error] Could not create the report file!" << endl;
@@ -41,7 +41,7 @@ void submitPayrollTaxPaymentAndFiling(string Tax_report, Node* head) {
 
     file << "ID,Name,Base Salary,Tax Amount,Social Security,Total Deduction,Main Salary,Opened_salary Date,Submitted Date\n";
 
-    Node* temp = head;
+    Box* temp = head;
     double Total_tax = 0.0;
     double Total_netpay = 0.0;
 
@@ -74,12 +74,14 @@ void submitPayrollTaxPaymentAndFiling(string Tax_report, Node* head) {
     cout << "  -> Total net payout    : $" << fixed << setprecision(2) << Total_netpay << endl;
     cout << "====================================================================" << endl;
 }
-Node* loadPayrollFromCSV(const string& filename) {
-    ifstream file(filename);
+Box* loadPayrollFromCSV(string file_name) {
+    // string file_name = "../../Data/payroll_report.csv";
+    
+    ifstream file(file_name);
     if (!file.is_open()) return nullptr;
 
-    Node* head = nullptr;
-    Node* tail = nullptr;
+    Box* head = nullptr;
+    Box* tail = nullptr;
     string line;
 
     if (!getline(file, line)) return nullptr; // រំលង Header
@@ -98,7 +100,7 @@ Node* loadPayrollFromCSV(const string& filename) {
         getline(ss, taxRate, ',');
         getline(ss, netSal, ',');
 
-        Node* newNode = new Node();
+        Box* newNode = new Box();
         newNode->data.ID = id;
         newNode->data.Name = name;
         newNode->data.Baseslary = stod(baseSal);
