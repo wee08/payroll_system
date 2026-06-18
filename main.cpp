@@ -18,40 +18,38 @@ int main(){
     string tax_filling_history_file = "./payroll_system/Data/tax_report.csv";
     string tax_report_file = "./payroll_system/Data/tax_report.csv";
 
-    // Employee * emp_l = read_CSV(employee_file);
-    // Employee * att_l = read_CSV(attendance_file);
+    Employee * emp_l = read_CSV(employee_file);
+    Employee * att_l = read_CSV(attendance_file);
 
-    submit(payroll_file,tax_report_file,final_salary_file);
-
-    // salary(attendance_file,final_salary_file);
-    // int choice;
-    // while(true){
-    //     displayMenu();
-    //     cout << endl;
-    //     cout << "Enter your choice: ";
-    //     cin >> choice;
-    //     cout << endl;
-    //     if(choice == 1){
-        //         record(emp_l,attendance_file);
-        //     }else if(choice==2){
-    //         search(att_l);
-    //     }else if(choice==3){
-    //         tax_informatoin(tax_information_file);
-    //     }else if(choice==4){
-    //         salary(attendance_file,final_salary_file);
-    //     }else if(choice==5){
-    //         sort(att_l,attendance_file);
-    //     }else if(choice==6){
-    //         payment();
-    //     }else if(choice==7){
-    //         submit(payroll_file,final_salary_file);
-    //     }else if(choice==0){
-    //         cout<<"Program Closed."<<endl;
-    //         cout<<endl;
-    //         break;
-    //     }else{
-    //         cout<<"Invalid option. Try again"<<endl;
-    //     }
-    // }
+    salary(attendance_file,final_salary_file);
+    int choice;
+    while(true){
+        displayMenu();
+        cout << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        cout << endl;
+        if(choice == 1){
+            record(emp_l,attendance_file);
+        }else if(choice==2){
+            search(att_l);
+        }else if(choice==3){
+            tax_informatoin(tax_information_file);
+        }else if(choice==4){
+            salary(attendance_file,final_salary_file);
+        }else if(choice==5){
+            sort(att_l,attendance_file);
+        }else if(choice==6){
+            payment();
+        }else if(choice==7){
+            submit(payroll_file,tax_report_file,final_salary_file);
+        }else if(choice==0){
+            cout<<"Program Closed."<<endl;
+            cout<<endl;
+            break;
+        }else{
+            cout<<"Invalid option. Try again"<<endl;
+        }
+    }
     return 0;
 }
