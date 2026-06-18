@@ -21,8 +21,9 @@ int main(){
     // Employee * emp_l = read_CSV(employee_file);
     // Employee * att_l = read_CSV(attendance_file);
 
-    submit(payroll_file,tax_report_file);
+    // submit(payroll_file,tax_report_file,final_salary_file);
 
+    salary(attendance_file,final_salary_file);
     // int choice;
     // while(true){
     //     displayMenu();
@@ -31,9 +32,8 @@ int main(){
     //     cin >> choice;
     //     cout << endl;
     //     if(choice == 1){
-    //         // salary(attendance_file);
-    //         record(emp_l,attendance_file);
-    //     }else if(choice==2){
+        //         record(emp_l,attendance_file);
+        //     }else if(choice==2){
     //         search(att_l);
     //     }else if(choice==3){
     //         tax_informatoin(tax_information_file);

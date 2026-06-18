@@ -7,7 +7,8 @@
 using namespace std;
 
 void salary(string file_name,string final_salary_file){
-    calculate_reductoin(file_name,final_salary_file);
+    calculate_reduction(file_name,final_salary_file);
+    
 }
 
 #endif

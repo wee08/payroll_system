@@ -5,19 +5,23 @@
 #include <sstream>
 #include <iomanip>
 
-#include "./salary_after_deduction.h"
 #include "../IO/write_CSV.h"
 using namespace std;
 
-void calculate_reductoin(string filename,string final_salary_file){
+void calculate_reduction(string filename,string final_salary_file){
     const int default_space = 8;
     const int S_space = 12;
     const int M_space = 18;
     const int L_space = 24;
+    const double NSSF=6;
+    double final_salary, tax;
+    const int full_attendance = 20;
     string line, first="",monthly_salary="",last="",hourly_paid="",overtime="",attendance="",mid="";
     int location=0; 
     double salary,hour_paid,OT,absence;
     ifstream monthlySalary;
+    ofstream file;
+    file.open(final_salary_file);
     monthlySalary.open(filename);
 
     //skip first row of csv file
@@ -33,7 +37,7 @@ void calculate_reductoin(string filename,string final_salary_file){
         <<setw(S_space)<<"Tax($)"
         <<setw(default_space)<<"Salary for the month(After Tax)($)"<<endl;
     cout<< string(143,'-')<<endl;
-
+    file<<"Tax,Final Salary"<<endl;
     while(getline(monthlySalary, line)){
         for(int i=0;i<5;i++){
             location=line.find(",");
@@ -81,10 +85,30 @@ void calculate_reductoin(string filename,string final_salary_file){
             <<setw(S_space)<<OT
             <<setw(M_space)<<absence;
 
-        salary_after_deduction(salary,OT,absence,hour_paid,final_salary_file);
+        if(salary<375){
+            tax=(salary*0);
+            final_salary=salary-NSSF-tax-((full_attendance - absence)*8*hour_paid)+(1.5*hour_paid*OT);
+        }else if(salary<500){
+            tax=(salary*0.05);
+            final_salary=salary-NSSF-tax-((full_attendance - absence)*8*hour_paid)+(1.5*hour_paid*OT);
+        }else if(salary<2125){
+            tax=(salary*0.1);
+            final_salary=salary-NSSF-tax-((full_attendance - absence)*8*hour_paid)+(1.5*hour_paid*OT);
+        }else if(salary<=3125){
+            tax=(salary*0.15);
+            final_salary=salary-NSSF-tax-((full_attendance - absence)*8*hour_paid)+(1.5*hour_paid*OT);
+        }else if(salary>3125){
+            tax=(salary*0.2);
+            final_salary=salary-NSSF-tax-((full_attendance - absence)*8*hour_paid)+(1.5*hour_paid*OT);
+        }
+        cout << left
+            << setw(S_space) << tax
+            << setw(default_space) << final_salary << endl;
+        file<<tax<<","<<final_salary<<endl;
     }
+    
 
-
+    file.close();
     monthlySalary.close();    
 }
 #endif

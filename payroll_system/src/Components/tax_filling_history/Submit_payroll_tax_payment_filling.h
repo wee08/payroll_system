@@ -12,15 +12,18 @@
 #include "./load_payroll_from_csv.h"
 #include "./get_opened_data.h"
 #include "./get_submission_date.h"
+#include "../IO/read_CSV.h"
 
 using namespace std;
 
-void submitPayrollTaxPaymentAndFiling(string Tax_report, Box* head) {
+void submitPayrollTaxPaymentAndFiling(string Tax_report,string final_salary_file, Box* head) {
+
     ofstream file(Tax_report);
     if (!file.is_open()) {
         cerr << "[Error] Could not create the report file!" << endl;
         return;
     }
+
 
     string openedDate = getOpenedDate();
     string submissionDate = getSubmissionDate();
@@ -46,11 +49,27 @@ void submitPayrollTaxPaymentAndFiling(string Tax_report, Box* head) {
              << temp->data.payrollsubmitdate << "\n";
 
         Total_tax += temp->data.Tax_Amount;
-        Total_netpay += temp->data.Main_salary;
         temp = temp->next;
     }
     
     file.close();
+
+    ifstream finalSalaryFile(final_salary_file);
+    if (finalSalaryFile.is_open()) {
+        string line;
+        while (getline(finalSalaryFile, line)) {
+            if (!line.empty()) {
+                size_t commaPos = line.find(',');
+                if (commaPos != string::npos) {
+                    string netpayStr = line.substr(0, commaPos);
+                    Total_netpay += stod(netpayStr);
+                }
+            }
+        }
+        finalSalaryFile.close();
+    } else {
+        cerr << "[Warning] Could not open final_salary.csv file!" << endl;
+    }
 
     cout << "\n" << string(70,'=') << endl;
     cout << "[Success] Payroll report generated successfully!" << endl;
