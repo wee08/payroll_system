@@ -33,11 +33,15 @@ void pay_schedule(Node* head,string attendance_file,string final_salary_file) {
     string line;
     stringstream ss;
 
-    while(getline(file_out,line)) {
+    getline(file_out,line);
+
+    while(ar != nullptr) {
+
         if(!getline(file_out,line)){
             salary = 0;
             return;
         }
+        salary = stod(line);
         salary = stod(line);
         total += salary;
         
