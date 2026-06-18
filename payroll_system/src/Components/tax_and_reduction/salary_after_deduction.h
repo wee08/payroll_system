@@ -52,7 +52,6 @@ void salary_after_deduction(double salary,double ot,double attendance, double ho
     file << final_salary << "," << endl;
     file.close();
 
-    calcuate_total_salary(file_name);
 }
 
 

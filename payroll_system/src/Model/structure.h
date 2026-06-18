@@ -42,6 +42,8 @@ struct Node {
     string name;
     double payment;
     Payday data;
+    
     Node* next;
+    Node* prev;
 };
 #endif

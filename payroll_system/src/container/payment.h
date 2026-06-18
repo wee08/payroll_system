@@ -3,7 +3,7 @@
 
 #include "../Components/pay_schedule/pay_schedule.h"
 
-int main(){
+void payment(){
     Node * head = NULL;
     pay_schedule(head);
 }

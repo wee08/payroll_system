@@ -31,6 +31,7 @@ struct Employee_info {
 struct Box {
     Employee_info data;          
     Box* next;
+    Box* prev;
 };
 
 #endif 

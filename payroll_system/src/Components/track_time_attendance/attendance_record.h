@@ -4,8 +4,6 @@
 #include <fstream>
 
 #include "../../Model/structure.h"
-#include "../IO/read_CSV.h"
-#include "../IO/write_CSV.h"
 #include "../../utils/calculate_utils.h"
 #include "./update_attendance.h"
 #include "../convert_ID.h"
@@ -24,9 +22,7 @@ void attendance_record(Employee *e,string file_name,string target_ID,int attenda
     string content = "";
     string line;
     float hourly_paid;
-
-
-
+    
      while(getline(find_ID,line)){
         string ID = line.substr(0,line.find(','));
 

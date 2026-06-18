@@ -6,16 +6,16 @@
 #include <fstream>
 #include <iomanip>
 
-#include "../../Model/structure.h"
 #include "../IO/read_CSV.h"
 #include "../../Model/structure.h"
 using namespace std;
 
-string file_path = "../../../Data/attendance.csv";
-string final_salary_file = "../../../Data/final_salary.csv";
-Employee * att_l = read_CSV(file_path);
 
 void pay_schedule(Node* head) {
+    string file_path = "../../../Data/attendance.csv";
+    string final_salary_file = "../../../Data/final_salary.csv";
+    Employee * att_l = read_CSV(file_path);
+
     double total = 0;
     double salary;
     Node* temp = head;
@@ -29,7 +29,7 @@ void pay_schedule(Node* head) {
     ifstream file_out;
     file_out.open(final_salary_file);
     if(!file_out.is_open()){
-        cout << "not open" << endl;
+        cout << "File is not open!" << endl;
         return;
     }
     string line;

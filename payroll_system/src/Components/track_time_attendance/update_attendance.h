@@ -3,7 +3,6 @@
 
 #include <iostream>
 
-#include "../IO/read_CSV.h"
 #include "./attendance_record.h"
 using namespace std;
 

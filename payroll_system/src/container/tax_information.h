@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "../tax_and_reduction/tax_information.h"
+#include "../Components/tax_and_reduction/tax_information.h"
 using namespace std;
 
 void tax_informatoin(string file_name){

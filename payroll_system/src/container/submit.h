@@ -14,7 +14,7 @@ void submit(string payroll_file,string tax_report_file) {
     Box* head = loadPayrollFromCSV(payroll_file);
     if (head != nullptr) {
         submitPayrollTaxPaymentAndFiling(tax_report_file, head);
-        cout << "Task completed! Please check the 'Tax_report.csv' file." << endl;
+        cout << "Task completed! Please check the 'tax_report.csv' file." << endl;
     } else {
         cout << "Error: No payroll data found to generate report." << endl;
     }

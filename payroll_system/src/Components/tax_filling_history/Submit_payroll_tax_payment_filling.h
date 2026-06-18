@@ -15,10 +15,6 @@
 
 using namespace std;
 
-
-
-
-
 void submitPayrollTaxPaymentAndFiling(string Tax_report, Box* head) {
     ofstream file(Tax_report);
     if (!file.is_open()) {

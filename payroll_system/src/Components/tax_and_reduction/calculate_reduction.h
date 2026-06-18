@@ -83,7 +83,6 @@ void calculate_reductoin(string filename,string final_salary_file){
 
         salary_after_deduction(salary,OT,absence,hour_paid,final_salary_file);
     }
-    calcuate_total_salary(final_salary_file);
 
 
     monthlySalary.close();    

@@ -9,7 +9,11 @@ Box* loadPayrollFromCSV(string file_name) {
     // string file_name = "../../Data/payroll_report.csv";
     
     ifstream file(file_name);
-    if (!file.is_open()) return nullptr;
+    if (!file.is_open()){
+        cout << "File not open!" << endl;
+        return nullptr;
+    } 
+        
 
     Box* head = nullptr;
     Box* tail = nullptr;
