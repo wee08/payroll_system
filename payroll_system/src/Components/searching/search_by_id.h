@@ -2,6 +2,8 @@
 #define SEARCH_BY_ID_H
 
 #include <iostream>
+#include <iomanip>
+
 #include "../sorting/swap.h"
 #include "../../Model/structure.h"
 #include "../convert_ID.h"
@@ -34,6 +36,7 @@ void search_by_id(Employee * e,string ID){
             << setw(S_space) << "Work Hour"
             << setw(10) << "Overtime"
             << setw(S_space) << "Attandance"
+            << setw(10) << "Overtime Paid"
             << "Total Cost"
             << endl;
             cout << string(173,'-') << endl;
@@ -50,6 +53,7 @@ void search_by_id(Employee * e,string ID){
              << setw(S_space) << ar->work_hour 
              << setw(10) << ar->overtime 
              << setw(S_space) << ar->attendance_count
+             << setw(10) << fixed << setprecision(2) << ar->overtime_paid
              << ar->total_cost << "\t$"
              << endl;
             isFound = true;

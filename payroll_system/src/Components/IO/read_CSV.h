@@ -55,6 +55,7 @@ Employee * read_CSV(string file_name){
         getline(ss,ar->overtime,',');
         getline(ss,ar->attendance_count,',');
         getline(ss,ar->work_hour,',');
+        getline(ss,ar->overtime_paid,',');
         getline(ss,ar->total_cost,',');
 
         
