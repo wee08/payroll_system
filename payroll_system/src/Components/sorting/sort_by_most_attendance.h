@@ -1,12 +1,16 @@
+
 #ifndef SORT_BY_MOST_ATTENDANCE_H
 #define SORT_BY_MOST_ATTENDANCE_H
 
 #include <iostream>
+#include <string>
 
 #include "../../Model/structure.h"
 #include "./swap.h"
 
-void sort_by_most_attendance(Employee* e, int size) {
+using namespace std;
+
+void sort_by_least_attendance(Employee* e, int size) {
 
     if(e->head == nullptr || e->head->next == nullptr)return;
 
@@ -23,7 +27,7 @@ void sort_by_most_attendance(Employee* e, int size) {
             int attendance_2 = 0;
             if(!ar_1->attendance_count.empty()) attendance_1 = stoi(ar_1->attendance_count);
             if(!ar_2->attendance_count.empty()) attendance_2 = stoi(ar_2->attendance_count);
-            if(attendance_1  < attendance_2) {
+            if(attendance_1  > attendance_2) {
                 swap(ar_1->ID, ar_2->ID);
                 swap(ar_1->name, ar_2->name);
                 swap(ar_1->gender, ar_2->gender);

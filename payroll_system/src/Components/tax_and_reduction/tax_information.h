@@ -1,10 +1,12 @@
 #ifndef TAX_INFORMATION_H
 #define TAX_INFORMATION_H
+
 #include <iostream>
 #include <sstream>
 #include <fstream>
 #include <iomanip>
 using namespace std;
+
 void tax_information(string file_name){ 
     const int default_space = 8;
     const int S_space = 12;
@@ -16,6 +18,10 @@ void tax_information(string file_name){
     ifstream tax_info;
     
     tax_info.open(file_name);
+    if(!tax_info.is_open()){
+        cout << "File is not open!" << endl;
+        return;
+    }
     cout<<string(50,'=')<<endl;
     while(getline(tax_info, line)){
         location=line.find(",");

@@ -4,6 +4,7 @@
 #include <iostream>
 #include "../sorting/swap.h"
 #include "../../Model/structure.h"
+#include "../convert_ID.h"
 using namespace std;
 
 void search_by_id(Employee * e,string ID){
@@ -16,6 +17,9 @@ void search_by_id(Employee * e,string ID){
     Attendance_record * ar = e->head;
 
     bool isFound = false;
+
+    ID = convert_ID(ID);
+
     while(ar != nullptr){
 
         if(ar->ID == ID){

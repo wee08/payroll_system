@@ -39,6 +39,7 @@ void display_all_data(Employee * e,string file_name){
             << setw(default_space) << "Salary"
             << setw(S_space) << "Hourly Paid"
             << setw(M_space) << "Phone" 
+
             << setw(S_space) << "Work Hour"
             << setw(10) << "Overtime"
             << setw(S_space) << "Attandance"
@@ -68,6 +69,7 @@ void display_all_data(Employee * e,string file_name){
              << setw(default_space) << ar->salary
              << setw(S_space) << ar->hourly_paid
              << setw(M_space) << ar->phone
+             
              << setw(S_space) << ar->work_hour 
              << setw(10) << ar->overtime 
              << setw(S_space) << ar->attendance_count

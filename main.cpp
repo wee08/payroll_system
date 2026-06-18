@@ -5,7 +5,7 @@
 #include "./payroll_system/src/container/salary.h"
 #include "./payroll_system/src/container/submit.h"
 #include "./payroll_system/src/Components/display_menu.h"
-#include "./payroll_system/src/container/tax_information.h"
+#include "./payroll_system/src/container/tax.h"
 #include "./payroll_system/src/container/payment.h"
 
 int main(){
@@ -21,7 +21,6 @@ int main(){
     Employee * emp_l = read_CSV(employee_file);
     Employee * att_l = read_CSV(attendance_file);
 
-    salary(attendance_file,final_salary_file);
     int choice;
     while(true){
         displayMenu();
@@ -34,7 +33,7 @@ int main(){
         }else if(choice==2){
             search(att_l);
         }else if(choice==3){
-            tax_informatoin(tax_information_file);
+            tax(tax_information_file);
         }else if(choice==4){
             salary(attendance_file,final_salary_file);
         }else if(choice==5){
