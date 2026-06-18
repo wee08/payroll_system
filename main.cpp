@@ -21,9 +21,9 @@ int main(){
     // Employee * emp_l = read_CSV(employee_file);
     // Employee * att_l = read_CSV(attendance_file);
 
-    // submit(payroll_file,tax_report_file,final_salary_file);
+    submit(payroll_file,tax_report_file,final_salary_file);
 
-    salary(attendance_file,final_salary_file);
+    // salary(attendance_file,final_salary_file);
     // int choice;
     // while(true){
     //     displayMenu();

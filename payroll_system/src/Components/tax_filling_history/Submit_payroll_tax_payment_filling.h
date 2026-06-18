@@ -48,28 +48,25 @@ void submitPayrollTaxPaymentAndFiling(string Tax_report,string final_salary_file
              << temp->data.Salaryopendate << ","
              << temp->data.payrollsubmitdate << "\n";
 
-        Total_tax += temp->data.Tax_Amount;
         temp = temp->next;
     }
-    
+            
     file.close();
+    
+    ifstream salary_file(final_salary_file);
+    string line = "";
+    string final_salary;
+    string tax;
+    getline(salary_file,line);
+    while(getline(salary_file,line)){
+        stringstream ss(line);
+        getline(ss, tax,',');
+        getline(ss, final_salary,',');
 
-    ifstream finalSalaryFile(final_salary_file);
-    if (finalSalaryFile.is_open()) {
-        string line;
-        while (getline(finalSalaryFile, line)) {
-            if (!line.empty()) {
-                size_t commaPos = line.find(',');
-                if (commaPos != string::npos) {
-                    string netpayStr = line.substr(0, commaPos);
-                    Total_netpay += stod(netpayStr);
-                }
-            }
-        }
-        finalSalaryFile.close();
-    } else {
-        cerr << "[Warning] Could not open final_salary.csv file!" << endl;
+        Total_tax += stod(tax);
+        Total_netpay += stod(final_salary);
     }
+    
 
     cout << "\n" << string(70,'=') << endl;
     cout << "[Success] Payroll report generated successfully!" << endl;
