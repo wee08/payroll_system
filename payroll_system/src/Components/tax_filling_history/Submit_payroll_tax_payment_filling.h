@@ -52,12 +52,12 @@ void submitPayrollTaxPaymentAndFiling(string Tax_report, Box* head) {
     
     file.close();
 
-    cout << "\n====================================================================" << endl;
+    cout << "\n" << string(70,'=') << endl;
     cout << "[Success] Payroll report generated successfully!" << endl;
     cout << "  -> Salary Opened Date  : " << openedDate << endl;
     cout << "  -> Tax Submission Date : " << submissionDate << " (Every day 28)" << endl;
     cout << "  -> Total tax amount    : $" << fixed << setprecision(2) << Total_tax << endl;
     cout << "  -> Total net payout    : $" << fixed << setprecision(2) << Total_netpay << endl;
-    cout << "====================================================================" << endl;
+    cout << string(70,'=') << endl;
 }
 #endif
