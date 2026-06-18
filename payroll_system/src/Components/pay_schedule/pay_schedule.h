@@ -11,10 +11,8 @@
 using namespace std;
 
 
-void pay_schedule(Node* head) {
-    string file_path = "../../../Data/attendance.csv";
-    string final_salary_file = "../../../Data/final_salary.csv";
-    Employee * att_l = read_CSV(file_path);
+void pay_schedule(Node* head,string attendance_file,string final_salary_file) {
+    Employee * att_l = read_CSV(attendance_file);
 
     double total = 0;
     double salary;
@@ -34,7 +32,12 @@ void pay_schedule(Node* head) {
     }
     string line;
     stringstream ss;
+
     while(getline(file_out,line)) {
+        if(!getline(file_out,line)){
+            salary = 0;
+            return;
+        }
         salary = stod(line);
         total += salary;
         

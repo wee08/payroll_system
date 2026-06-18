@@ -39,7 +39,7 @@ int main(){
         }else if(choice==5){
             sort(att_l,attendance_file);
         }else if(choice==6){
-            payment();
+            payment(attendance_file,final_salary_file);
         }else if(choice==7){
             submit(payroll_file,tax_report_file,final_salary_file);
         }else if(choice==0){
