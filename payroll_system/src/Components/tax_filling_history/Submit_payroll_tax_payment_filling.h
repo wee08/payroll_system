@@ -65,6 +65,8 @@ void submitPayrollTaxPaymentAndFiling(string Tax_report,string final_salary_file
 
         Total_tax += stod(tax);
         Total_netpay += stod(final_salary);
+
+        // cout <<"[" << stod(final_salary) << "]" << endl;
     }
     
 

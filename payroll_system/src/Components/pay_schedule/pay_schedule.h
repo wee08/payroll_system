@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <iomanip>
+#include <ctime>
 
 #include "../IO/read_CSV.h"
 #include "../../Model/structure.h"
@@ -13,6 +14,15 @@ using namespace std;
 
 void pay_schedule(Node* head,string attendance_file,string final_salary_file) {
     Employee * att_l = read_CSV(attendance_file);
+
+    const char* months[] = {
+    "January", "February", "March", "April",
+    "May", "June", "July", "August",
+    "September", "October", "November", "December"};
+
+    time_t t = time(nullptr);
+    tm* now = localtime(&t);
+    int month_idx = now->tm_mon + 1;
 
     double total = 0;
     double salary;
@@ -32,6 +42,8 @@ void pay_schedule(Node* head,string attendance_file,string final_salary_file) {
     }
     string line;
     stringstream ss;
+    string tax_;
+    int location = 0;
 
     getline(file_out,line);
 
@@ -41,13 +53,16 @@ void pay_schedule(Node* head,string attendance_file,string final_salary_file) {
             salary = 0;
             return;
         }
+        location = line.find(",");
+        tax_ = line.substr(0,location);
+        line = line.substr(location + 1, line.length());
         salary = stod(line);
         total += salary;
-
+        // cout <<"[" << (salary) << "]" << endl;
         cout<< left 
             << setw(20) <<ar->name
-            << setw(12) << ar->salary
-            << "[ 20-Jun-2026 ]" << endl;
+            << setw(12) << salary
+            << "[ 20-"<< months[month_idx] <<"-2026 ]" << endl;
 
         ar = ar->next;
     }
