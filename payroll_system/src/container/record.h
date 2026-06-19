@@ -10,7 +10,7 @@
 #include "../Model/structure.h"
 using namespace std;
 
-void record(Employee * e, string file_name){
+void record(Employee * e, string attendance_file){
 
     Attendance_record * ar = e->head;
 
@@ -18,6 +18,7 @@ void record(Employee * e, string file_name){
     int attendance_count;
     int work_hour;
     int choice;
+    float hourly_paid;
 
     bool isFound = false;
 
@@ -60,7 +61,7 @@ void record(Employee * e, string file_name){
             cout << "Enter your work hour: ";
             cin >> work_hour;
             cout << endl;
-            attendance_record(e,file_name,ID,attendance_count,work_hour);
+            attendance_record(e,attendance_file,ID,attendance_count,work_hour);
         }else if(choice == 0){
             break;
         }else{

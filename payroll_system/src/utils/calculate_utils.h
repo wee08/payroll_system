@@ -8,7 +8,7 @@
 using namespace std;
 
 
-void calculate_utils(Employee * e,string file_name,string ID,int attendance_cout,int work_hour,float hourly_paid){
+void calculate_utils(Employee * e,string attendance_file,string ID,int attendance_cout,int work_hour,float hourly_paid){
 
     const int full_hour = 160;
     const int full_attendance = 20;
@@ -25,7 +25,7 @@ void calculate_utils(Employee * e,string file_name,string ID,int attendance_cout
     //     << hourly_paid << " "
     //     << total_cost << endl;
 
-    write_CSV(e,file_name,ID,overtime,attendance_cout,work_hour,overtime_paid,total_cost);
+    write_CSV(e,attendance_file,ID,overtime,attendance_cout,work_hour,overtime_paid,total_cost);
 }
 
 
