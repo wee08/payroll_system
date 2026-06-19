@@ -2,31 +2,25 @@
 #define CALCULATE_UTILS_H
 
 #include <iostream>
-
 #include "../Model/structure.h"
-#include "../Components/IO/write_CSV.h"
 using namespace std;
 
+struct CalcResult {
+    int   overtime;
+    float overtime_paid;
+    int   total_cost;
+};
 
-void calculate_utils(Employee * e,string attendance_file,string ID,int attendance_cout,int work_hour,float hourly_paid){
-
-    const int full_hour = 160;
+CalcResult calculate_utils(int attendance_count, int work_hour, float hourly_paid){
+    const int full_hour       = 160;
     const int full_attendance = 20;
-    
-    int overtime = work_hour - full_hour;
-    if(overtime < 0) overtime = 0;
-    
-    float overtime_paid = ((1.5 * hourly_paid) * overtime);
-    int total_cost  = (full_attendance - attendance_cout) * 8 * hourly_paid;
 
-    // cout << overtime  << " "
-    //     << overtime_paid << " "
-    //     << attendance_cout << " " 
-    //     << hourly_paid << " "
-    //     << total_cost << endl;
+    CalcResult result;
+    result.overtime      = max(0, work_hour - full_hour);
+    result.overtime_paid = 1.5f * hourly_paid * result.overtime;
+    result.total_cost    = (full_attendance - attendance_count) * 8 * hourly_paid;
 
-    write_CSV(e,attendance_file,ID,overtime,attendance_cout,work_hour,overtime_paid,total_cost);
+    return result;
 }
-
 
 #endif
