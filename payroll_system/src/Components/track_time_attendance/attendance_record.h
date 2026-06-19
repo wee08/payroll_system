@@ -34,7 +34,7 @@ void attendance_record(Employee *e,string file_name,string target_ID,int attenda
             calculate_utils(e,file_name,target_ID,attendance_count,work_hour,hourly_paid);
         }else{
             content += line + "\n";
-            update_attendance(file_name,target_ID,content);
+            update_attendance(file_name,content);
         }
      }
     find_ID.close();
