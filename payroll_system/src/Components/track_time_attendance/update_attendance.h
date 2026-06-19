@@ -8,11 +8,9 @@
 using namespace std;
 
 void update_attendance(string file_name,string target_ID, string content){
-
     ofstream file(file_name);
     file << content;
     file.close();
-
 }   
 
 #endif

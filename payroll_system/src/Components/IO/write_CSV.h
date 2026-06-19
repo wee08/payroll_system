@@ -17,7 +17,6 @@ void write_CSV(Employee * e,string file_name,string ID, int overtime,int attenda
     
     ofstream file;
 
-
     ifstream check(file_name);
 
     if(!check.is_open()){
@@ -29,11 +28,10 @@ void write_CSV(Employee * e,string file_name,string ID, int overtime,int attenda
     check.close();
 
     file.open(file_name, ios::app);
-
+    
     if(isEmpty){
         file << "ID,Name,Gender,Departmen,Position,Monthly Salary,Hourly Paid,Phone,Overtime,Attendance,Work Hour,Overtime Paid,Total Cost" << endl;
     }
-    
     while(ar != nullptr){
         if(ar->ID == ID){
 

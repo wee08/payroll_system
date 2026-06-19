@@ -19,13 +19,11 @@ void attendance_record(Employee *e,string file_name,string target_ID,int attenda
     if(!find_ID.is_open()){
         cout << "File not open!" << endl;
         return;
-     }
+    }
 
     string content = "";
     string line;
     float hourly_paid;
-
-
 
      while(getline(find_ID,line)){
         string ID = line.substr(0,line.find(','));
@@ -42,7 +40,7 @@ void attendance_record(Employee *e,string file_name,string target_ID,int attenda
     find_ID.close();
 
     while(ar!=nullptr){
-            hourly_paid = stoi(ar->hourly_paid);
+        hourly_paid = stoi(ar->hourly_paid);
         ar = ar->next;
     }
 
