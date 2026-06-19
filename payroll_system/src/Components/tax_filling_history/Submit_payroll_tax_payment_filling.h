@@ -24,7 +24,6 @@ void submitPayrollTaxPaymentAndFiling(string Tax_report,string final_salary_file
         return;
     }
 
-
     string openedDate = getOpenedDate();
     string submissionDate = getSubmissionDate();
 
