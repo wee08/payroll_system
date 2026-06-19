@@ -42,13 +42,11 @@ void pay_schedule(Node* head,string attendance_file,string final_salary_file) {
             return;
         }
         salary = stod(line);
-        salary = stod(line);
         total += salary;
-        
 
         cout<< left 
             << setw(20) <<ar->name
-            << setw(12) << salary
+            << setw(12) << ar->salary
             << "[ 20-Jun-2026 ]" << endl;
 
         ar = ar->next;

@@ -13,8 +13,7 @@
 
 using namespace std;
 
-void attendance_record(Employee *e, string file_name, string target_ID,
-                       int attendance_count, int work_hour) {
+void attendance_record(Employee *e, string file_name, string target_ID,int attendance_count, int work_hour) {
 
     target_ID = convert_ID(target_ID);
 
@@ -28,7 +27,6 @@ void attendance_record(Employee *e, string file_name, string target_ID,
     string line;
     bool   found = false;
 
-    // Preserve header
     getline(find_ID, line);
     content += line + "\n";
 
@@ -40,24 +38,20 @@ void attendance_record(Employee *e, string file_name, string target_ID,
         if (ID == target_ID) {
             found = true;
 
-            // Parse existing row to get hourly_paid and other fields
             stringstream ss(line);
             string cols[13];
             for (int i = 0; i < 13; i++) getline(ss, cols[i], ',');
 
             float hourly_paid = stof(cols[6]);
 
-            // Calculate new values
             CalcResult calc = calculate_utils(attendance_count, work_hour, hourly_paid);
 
-            // Update only attendance columns, keep everything else intact
             cols[8]  = to_string(calc.overtime);
             cols[9]  = to_string(attendance_count);
             cols[10] = to_string(work_hour);
             cols[11] = to_string(calc.overtime_paid);
             cols[12] = to_string(calc.total_cost);
 
-            // Also update the linked list node
             Attendance_record* ar = e->head;
             while (ar != nullptr) {
                 if (ar->ID == target_ID) {
@@ -71,7 +65,6 @@ void attendance_record(Employee *e, string file_name, string target_ID,
                 ar = ar->next;
             }
 
-            // Rebuild the row in place
             string updated_row = "";
             for (int i = 0; i < 12; i++) updated_row += cols[i] + ",";
             updated_row += cols[12];
@@ -89,7 +82,6 @@ void attendance_record(Employee *e, string file_name, string target_ID,
         return;
     }
 
-    // Write once — replaces entire file cleanly
     update_attendance(file_name, content);
 
     cout << "Updated successfully: " << target_ID << endl;

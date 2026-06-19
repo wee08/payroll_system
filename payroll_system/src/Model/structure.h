@@ -46,4 +46,10 @@ struct Node {
     Node* next;
     Node* prev;
 };
+
+struct CalcResult {
+    int   overtime;
+    float overtime_paid;
+    int   total_cost;
+};
 #endif

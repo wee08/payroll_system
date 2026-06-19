@@ -5,12 +5,6 @@
 #include "../Model/structure.h"
 using namespace std;
 
-struct CalcResult {
-    int   overtime;
-    float overtime_paid;
-    int   total_cost;
-};
-
 CalcResult calculate_utils(int attendance_count, int work_hour, float hourly_paid){
     const int full_hour       = 160;
     const int full_attendance = 20;
