@@ -9,7 +9,6 @@
 #include "./payroll_system/src/container/payment.h"
 
 int main(){
-    
     string employee_file = "./payroll_system/Data/employee_list.csv";
     string attendance_file = "./payroll_system/Data/attendance.csv";
     string tax_information_file = "./payroll_system/Data/tax_information.csv";

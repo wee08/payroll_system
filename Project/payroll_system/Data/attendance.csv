@@ -1,5 +1,4 @@
 ID,Name,Gender,Departmen,Position,Monthly Salary,Hourly Paid,Phone,Overtime,Attendance,Work Hour,Overtime Paid,Total Cost
-F1,Sean Manutnithya,M,IT,Software Engineer,3200,20,963111156,0,20,160,0.000000,0,
 F3,Tang Sovanoudom,M,HR,HR Manager,5000,31.25,122223333,0,19,140,0.000000,56,
 F4,Thorn Bunthet,M,IT,Cloud Engineer,3500,21.875,966663000,0,20,160,0.000000,0,
 F5,Kev Veasna,F,IT,Data Analyse,2800,17.5,961223324,0,18,120,0.000000,112,
@@ -17,3 +16,4 @@ H8,Jonh Smith,M,MKT,Video and Photo Shooter,900,5.625,17890123,0,20,160,0.000000
 H9,Nephew Jastin,M,MKT,Marketing Specialist,890,5.5625,18901234,5,20,165,52.500000,0,
 H3,Leap Phea,F,IT,API Developer,500,3.125,12345678,5,20,165,52.500000,0,
 F2,Taing Chandara,M,MKT,Graphic Designer,1200,7.5,123344896,8,20,168,84.000000,0,
+F1,Sean Manutnithya,M,IT,Software Engineer,3200,20,963111156,0,12,12,0.000000,448,
