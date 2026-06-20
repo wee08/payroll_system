@@ -7,7 +7,8 @@
 #include "../Model/structure.h"
 using namespace std;
 
-void search(Employee * e){
+void search(string attendance_file){
+    Employee * e = read_CSV(attendance_file);
     int choice;
     string ID;
 
@@ -26,7 +27,7 @@ void search(Employee * e){
             cout << "Enter ID: ";
             cin >> ID;
             cout << endl;
-            search_by_id(e,ID);
+            search_by_id(attendance_file,ID);
         }else if(choice == 0){
             break;
         }else{

@@ -18,7 +18,6 @@ void record(Employee * e, string attendance_file){
     int attendance_count;
     int work_hour;
     int choice;
-    float hourly_paid;
 
     bool isFound = false;
 

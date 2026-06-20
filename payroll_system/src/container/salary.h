@@ -1,5 +1,5 @@
 #ifndef SALARY_H 
-#define SALAYR_H
+#define SALARY_H
 
 #include <iostream>
 

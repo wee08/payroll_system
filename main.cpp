@@ -31,7 +31,7 @@ int main(){
         if(choice == 1){
             record(emp_l,attendance_file);
         }else if(choice==2){
-            search(att_l);
+            search(attendance_file);
         }else if(choice==3){
             tax(tax_information_file);
         }else if(choice==4){

@@ -15,15 +15,8 @@ using namespace std;
 Employee * read_CSV(string file_name){
     Employee * e  = create_new_employee();
 
-    string file_condition = "../../../Data/final_salary.csv";
-
     ifstream file;
     file.open(file_name);
-
-    if(!file.is_open()){
-        cout << "File is not open!" << endl;
-        return nullptr;
-    }
 
     string line;
     getline(file,line);
@@ -61,8 +54,6 @@ Employee * read_CSV(string file_name){
         e->size++;
     }
     file.close();
-    
-
     return e;
 }
 

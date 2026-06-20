@@ -8,9 +8,9 @@
 using namespace std;
 
 void tax_information(string file_name){ 
-    const int default_space = 8;
-    const int S_space = 12;
-    const int M_space = 18;
+    // const int default_space = 8;
+    // const int S_space = 12;
+    // const int M_space = 18;
     const int L_space = 24;
     string line="";
     string salary="", tax="";

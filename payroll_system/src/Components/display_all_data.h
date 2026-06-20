@@ -13,7 +13,6 @@ void display_all_data(Employee * e,string file_name){
     const int S_space = 12;
     const int M_space = 18;
     const int L_space = 30;
-    int line_count = 1;
 
     Attendance_record * ar = e->head;
 

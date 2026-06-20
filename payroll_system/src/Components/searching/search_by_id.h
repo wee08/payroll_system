@@ -7,9 +7,12 @@
 #include "../sorting/swap.h"
 #include "../../Model/structure.h"
 #include "../convert_ID.h"
+#include "../IO/read_CSV.h"
 using namespace std;
 
-void search_by_id(Employee * e,string ID){
+
+void search_by_id(string  attendance_file,string ID){
+    Employee * e = read_CSV(attendance_file);
 
     const int default_space = 8;
     const int S_space = 12;
