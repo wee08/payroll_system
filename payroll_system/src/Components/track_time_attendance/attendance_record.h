@@ -25,6 +25,10 @@ void attendance_record(Employee *e,string file_name,string target_ID,int attenda
     string line;
     float hourly_paid;
 
+    while(ar!=nullptr){
+        hourly_paid = stoi(ar->hourly_paid);
+        ar = ar->next;
+    }
      while(getline(find_ID,line)){
         string ID = line.substr(0,line.find(','));
 
@@ -39,10 +43,6 @@ void attendance_record(Employee *e,string file_name,string target_ID,int attenda
      }
     find_ID.close();
 
-    while(ar!=nullptr){
-        hourly_paid = stoi(ar->hourly_paid);
-        ar = ar->next;
-    }
 
     calculate_utils(e,file_name,target_ID,attendance_count,work_hour,hourly_paid);
 

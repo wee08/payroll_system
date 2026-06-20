@@ -66,6 +66,7 @@ void record(Employee * e, string attendance_file){
             break;
         }else{
             cout << "Invalid choice!!!" << endl;
+            continue;
         }
 
     }
